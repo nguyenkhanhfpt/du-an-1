@@ -59,6 +59,10 @@ article {
 .product {
     position: relative;
 }
+.product-content{
+    z-index: 100 !important;
+    background-color: white;
+}
 .name {
     color: #707070;
     
@@ -93,6 +97,35 @@ article {
     color: white;
     width: 52px;
 }
+
+.display-card {
+    top: 81%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:absolute;
+    transition: top 0.5s;
+    z-index: 2;
+}
+.display-card a{
+    padding: 13px;
+    background-color: white;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+.product:hover .display-card{
+    top: 65%;
+}
+.product:hover .display-card a{
+    opacity: 1;
+}
+.display-card a:hover{
+    background-color: #36A82B;
+    transition: all .3s linear;
+}
+
+
+
+
 
 
 
