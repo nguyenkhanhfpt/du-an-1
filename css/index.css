@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Phần hotline */
+.hotline {
+    background-color: #313538;
+    color: white;
+}
+.phone-number {
+    font-size: 14px;
+}
+
+
+
+/* Menu */
+nav {
+    background-color: #fff;
+}
+.menu-top a {
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    
+}
+.menu-top a:hover {
+    color: #5fac15;
+    transition: color 0.3s ease;
+}
+.menu-top-end {
+    width: 100px;
+}
+
+
+
+
+/* header */
+
+header {
+    height: 300px;
+    background: gray;
+    width: 100%;
+}
+
+
+/* Phần cam kết */
+section{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+
+
+/* Phần sản phẩm */
+article{
+    background: black;
+    height: 20px;
+}
