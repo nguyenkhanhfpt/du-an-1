@@ -25,7 +25,7 @@ nav {
     
 }
 .menu-top a:hover {
-    color: #5fac15;
+    color: #36A82B;
     transition: color 0.3s ease;
 }
 .menu-top-end {
@@ -53,7 +53,46 @@ section{
 
 
 /* Phần sản phẩm */
-article{
-    background: black;
-    height: 20px;
+article {
+    margin: 20px 0;
 }
+.product {
+    position: relative;
+}
+.name {
+    color: #707070;
+    
+}
+.name-over{
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.name:hover {
+    color: #36A82B;
+    transition: all .5s linear;
+}
+.price {
+    font-weight: 800;
+    font-size: 17px;
+}
+.price span{
+    font-weight: 400;
+    color: #bebebe;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+.sale{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #36A82B;
+    padding: 5px 10px;
+    font-weight: 600;
+    color: white;
+    width: 52px;
+}
+
+
+
