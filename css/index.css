@@ -76,6 +76,9 @@ article {
 .product {
     position: relative;
 }
+.product img{
+    height: 230px;
+}
 .product-content{
     z-index: 100 !important;
     background-color: white;
@@ -138,6 +141,12 @@ article {
 .display-card a:hover{
     background-color: #36A82B;
     transition: all .3s linear;
+}
+
+@media screen and (min-width: 900px){
+    .product img {
+        height: 275px;
+    }
 }
 
 
