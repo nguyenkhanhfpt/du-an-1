@@ -24,6 +24,9 @@ nav {
     font-weight: 700;
     
 }
+.text-menu{
+    padding-right: 5rem;
+}
 .menu-top a:hover {
     color: #36A82B;
     transition: color 0.3s ease;

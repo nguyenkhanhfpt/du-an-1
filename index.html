@@ -9,7 +9,16 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Food & Drinks</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,8 +47,8 @@
                 <div class="col-3">
                     <a href=""><img src="images/logo.svg" alt=""></a>
                 </div>
-                <div class="col pl-5">
-                    <ul class="nav menu-top">
+                <div class="col text-menu d-flex justify-content-center">
+                    <ul class="nav menu-top text-center">
                         <li class="nav-item">
                             <a class="nav-link" href="#">TRANG CHỦ</a>
                         </li>
@@ -49,8 +58,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">CỘNG ĐỒNG</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">TÀI KHOẢN</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                TÀI KHOẢN
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#login">ĐĂNG
+                                    NHẬP</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin">ĐĂNG KÝ</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -62,16 +79,70 @@
                         <img src="images/shopping-cart.svg" width="23px">
                     </div>
                     <div class="">
-                        <img src="images/account.svg" width="23px">
+                        <a class="nav-link dropdown-toggle p-0 pb-2" style="color: #36a82b" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="images/account.svg" width="23px">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 160px ;">
+                                <div class="name-over text-center pb-2 font-weight-bold" >
+                                    Nguyễn Khánh
+                                </div>
+                            <a class="dropdown-item" href="#" ><img src="images/account.svg" width="18px"> <span>Thông tin</span></a>
+                            <a class="dropdown-item" href="#"><img src="images/logout.svg" width="18px"> <span>Đăng xuất</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Modal đăng nhập & đăng ký -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng ký thành viên</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Phần header -->
     <header></header>
+
 
 
     <!-- Phần cam kết -->
