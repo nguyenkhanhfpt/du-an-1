@@ -34,7 +34,21 @@ nav {
 .menu-top-end {
     width: 100px;
 }
-
+.sub-menu-button{
+    top: 50px;
+    right: 0;
+    display: none;
+}
+.list-group-item a{
+    color: black;
+    text-decoration: none;
+}
+.list-group-item a:hover{
+    color: #36A82B;
+}
+#dropdown-menu{
+    left: -20px;
+}
 
 
 
