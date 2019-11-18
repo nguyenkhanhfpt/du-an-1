@@ -55,10 +55,21 @@ nav {
 /* header */
 
 header {
-    height: 300px;
-    background: gray;
+    height: 350px;
     width: 100%;
 }
+.ma5slider .slide img, .ma5slider>img.slide {
+    height: 350px;
+}
+@media screen and (max-width: 600px) {
+    header{
+        height: 250px;
+    }
+    .ma5slider .slide img, .ma5slider>img.slide {
+        height: 250px;
+    }
+}
+
 
 
 /* Phần cam kết */
