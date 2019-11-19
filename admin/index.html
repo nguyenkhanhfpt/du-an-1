@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <div class="border-right menu-left">
+            <div class="p-2 border-bottom logo">
+                <a href="../index.html"><img class="ml-4" src="../images/new-logo.png" width="120px"></a>
+            </div>
+            <div class="card" style="width: 100%; border: none">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item "><a href="#"><span><img src="../images/car.svg" width="23px"></span>
+                            Tổng quan</a></li>
+                    <li class="list-group-item "><a href="#"><span><img src="../images/vegetables.svg"
+                                    width="23px"></span> Sản phẩm</a></li>
+                    <li class="list-group-item "><a href="#"><span><img src="../images/customer.svg"
+                                    width="23px"></span> Khách hàng</a></li>
+                    <li class="list-group-item "><a href="#"><span><img src="../images/comments.svg"
+                                    width="23px"></span> Bình luận</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-right">
+            <!-- Menu top -->
+            <div class="menu-top border-bottom d-flex justify-content-end py-2 pr-4">
+                <a class="nav-link dropdown-toggle p-0 pb-2" style="color: #36a82b" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../images/av.jpg" width="40px" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 160px ;">
+                    <div class="name-over text-center pb-2 font-weight-bold">
+                        Nguyễn Khánh
+                    </div>
+                    <a class="dropdown-item" href="#"><img src="../images/account.svg" width="18px"> <span>Thông
+                            tin</span></a>
+                    <a class="dropdown-item" href="#"><img src="../images/logout.svg" width="18px"> <span>Đăng
+                            xuất</span></a>
+                </div>
+            </div>
+
+
+            <!-- Phần nội dung hiển thị -->
+            <div class="content">
+                <div class="main-content">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Danh sách Đồ ăn & Đồ uống</h5>
+
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên</th>
+                                            <th scope="col">Giá</th>
+                                            <th scope="col">Giảm giá</th>
+                                            <th scope="col">Lượt xem</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row">1</td>
+                                            <td>
+                                                <img src="../images/tra-sua.jpg" class="rounded" height="45px"
+                                                    width="45px">
+                                                Trà sữa đậu đỏ
+                                            </td>
+                                            <td>20.000 đ</td>
+                                            <td>0 %</td>
+                                            <td>10</td>
+                                            <td>
+                                                <a class="btn btn-success rounded-pill button " href="#"
+                                                    role="button">Sửa</a>
+                                                <a class="btn btn-success rounded-pill button" href="#"
+                                                    role="button">Xóa</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">2</td>
+                                            <td>
+                                                <img src="../images/my.png" class="rounded" height="45px" width="45px">
+                                                Mỳ quảng Phú Chiêm
+                                            </td>
+                                            <td>30.000 đ</td>
+                                            <td>5 %</td>
+                                            <td>10</td>
+                                            <td>
+                                                <a class="btn btn-success rounded-pill button " href="#"
+                                                    role="button">Sửa</a>
+                                                <a class="btn btn-success rounded-pill button" href="#"
+                                                    role="button">Xóa</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">3</td>
+                                            <td>
+                                                <img src="../images/banh-kep.png" class="rounded" height="45px"
+                                                    width="45px">
+                                                Bánh kẹp Đà Nẵng
+                                            </td>
+                                            <td>15.000 đ</td>
+                                            <td>10 %</td>
+                                            <td>10</td>
+                                            <td>
+                                                <a class="btn btn-success rounded-pill button " href="#"
+                                                    role="button">Sửa</a>
+                                                <a class="btn btn-success rounded-pill button" href="#"
+                                                    role="button">Xóa</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td scope="row">4</td>
+                                            <td>
+                                                <img src="../images/banhxeo-1.jpg" class="rounded" height="45px"
+                                                    width="45px">
+                                                Bánh xèo
+                                            </td>
+                                            <td>20.000 đ</td>
+                                            <td>0 %</td>
+                                            <td>30</td>
+                                            <td>
+                                                <a class="btn btn-success rounded-pill button " href="#"
+                                                    role="button">Sửa</a>
+                                                <a class="btn btn-success rounded-pill button" href="#"
+                                                    role="button">Xóa</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
