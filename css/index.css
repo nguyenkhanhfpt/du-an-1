@@ -55,11 +55,11 @@ nav {
 /* header */
 
 header {
-    height: 350px;
+    height: 430px;
     width: 100%;
 }
 .ma5slider .slide img, .ma5slider>img.slide {
-    height: 350px;
+    height: 430px;
 }
 @media screen and (max-width: 600px) {
     header{
