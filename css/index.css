@@ -162,6 +162,19 @@ article {
 
 
 
+/* footer */
+footer{
+    height: 200px;
+}
+footer .text p{
+    font-size: 15px;
+    margin-bottom: 1px;
+}
+
+
+
+
+
 
 
 
