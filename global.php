@@ -4,4 +4,5 @@
     $URL_ADMIN = $URL . '/admin';
     $URL_IMG = $URL . '/images';
     $URL_CSS = $URL .'/css';
+    $URL_JS = $URL .'/js';
 ?>
