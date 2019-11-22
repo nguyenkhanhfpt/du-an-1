@@ -1,14 +1,6 @@
 <?php
     require_once 'database.php';
 
-    function selectProducts(){
-        global $db;
-
-        $select = "SELECT * FROM products";
-
-        return $db->query($select);
-    }
-
     function selectProduct($id_product){
         global $db;
 
@@ -16,6 +8,14 @@
 
         $product = $db->query($select);
         return $product->fetch();
+    }
+
+    function selectProducts(){
+        global $db;
+
+        $select = "SELECT * FROM products";
+
+        return $db->query($select);
     }
 
     function insertProduct($name_product, $price_product, $sale, $kind_product, $img_product, $description){
