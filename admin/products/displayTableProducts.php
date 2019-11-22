@@ -15,73 +15,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>
-                            <img src="../../images/trasua.jpg" class="rounded" height="45px"
-                                width="45px">
-                            Trà sữa đậu đỏ
-                        </td>
-                        <td>20.000 đ</td>
-                        <td>0 %</td>
-                        <td>10</td>
-                        <td>
-                            <a class="btn btn-success rounded-pill button " href="#"
-                                role="button">Sửa</a>
-                            <a class="btn btn-success rounded-pill button" href="#"
-                                role="button">Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td>
-                            <img src="../../images/my.png" class="rounded" height="45px" width="45px">
-                            Mỳ quảng Phú Chiêm
-                        </td>
-                        <td>30.000 đ</td>
-                        <td>5 %</td>
-                        <td>10</td>
-                        <td>
-                            <a class="btn btn-success rounded-pill button " href="#"
-                                role="button">Sửa</a>
-                            <a class="btn btn-success rounded-pill button" href="#"
-                                role="button">Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">3</td>
-                        <td>
-                            <img src="../../images/banh-kep.png" class="rounded" height="45px"
-                                width="45px">
-                            Bánh kẹp Đà Nẵng
-                        </td>
-                        <td>15.000 đ</td>
-                        <td>10 %</td>
-                        <td>10</td>
-                        <td>
-                            <a class="btn btn-success rounded-pill button " href="#"
-                                role="button">Sửa</a>
-                            <a class="btn btn-success rounded-pill button" href="#"
-                                role="button">Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td scope="row">4</td>
-                        <td>
-                            <img src="../../images/banhxeo-1.jpg" class="rounded" height="45px"
-                                width="45px">
-                            Bánh xèo
-                        </td>
-                        <td>20.000 đ</td>
-                        <td>0 %</td>
-                        <td>30</td>
-                        <td>
-                            <a class="btn btn-success rounded-pill button " href="#"
-                                role="button">Sửa</a>
-                            <a class="btn btn-success rounded-pill button" href="#"
-                                role="button">Xóa</a>
-                        </td>
-                    </tr>
+                    <?php foreach($products as $product) : ?>
+                        <tr>
+                            <td scope="row"><?=$product['id_product']?></td>
+                            <td>
+                                <img src="<?=$URL_IMG?>/<?=$product['img_product']?>" class="rounded" height="45px"
+                                    width="45px">
+                                <?=$product['name_product']?>
+                            </td>
+                            <td><?=number_format($product['price_product'])?> đ</td>
+                            <td><?=$product['sale']?> %</td>
+                            <td><?=$product['view']?></td>
+                            <td>
+                                <a class="btn btn-success rounded-pill button " href="#"
+                                    role="button">Sửa</a>
+                                <a class="btn btn-success rounded-pill button" href="#"
+                                    role="button">Xóa</a>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
