@@ -1,4 +1,8 @@
-<?php require('../global.php') ?>
+<?php 
+    require '../global.php';
+    require '../DAO/functionProduct.php';
+    $products = selectProducts();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,127 +73,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/banhxeo-1.jpg" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Bánh xèo</a>
+                <?php foreach($products as $product): ?>
+                    <div class="col-6 col-md-3">
+                        <div class="border product mb-3">
+                            <img src="<?=$URL_IMG?>/<?=$product['img_product']?>" width="100%">
+                            <div class="card-body text-center">
+                                <div class="name-over">
+                                    <a href="#" class="name text-decoration-none"><?=$product['name_product']?></a>
+                                </div>
+                                <p class="price mb-0"><?=$product['price_product']?> đ</p>
                             </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
+                            <div class="display-card">
+                                <a href="#" class="shadow rounded">
+                                    <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/banh-kep.png" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Bánh kẹp Đà Nẵng</a>
-                            </div>
-                            <p class="price mb-0"><span>15.000 đ</span> 10.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                        <!-- Sale    -->
-                        <div class="sale rounded-pill">
-                            Sale
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/trasua.jpg" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Trà sữa đậu đỏ</a>
-                            </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/my.png" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Mỳ quảng Phú Chiêm</a>
-                            </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/my.png" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Mỳ quảng Phú Chiêm</a>
-                            </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/my.png" width="100%">
-                        <div class="card-body text-center">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Mỳ quảng Phú Chiêm</a>
-                            </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="border product mb-3">
-                        <img src="<?=$URL_IMG?>/my.png" width="100%">
-                        <div class="card-body text-center product-content">
-                            <div class="name-over">
-                                <a href="#" class="name text-decoration-none">Mỳ quảng Phú Chiêm</a>
-                            </div>
-                            <p class="price mb-0">20.000 đ</p>
-                        </div>
-                        <div class="display-card">
-                            <a href="#" class="shadow rounded">
-                                <img src="<?=$URL_IMG?>/shopping-cart.svg" alt="" width="25px">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </article>
-
 
     <?php require 'components/footer.php' ?>
 
