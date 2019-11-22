@@ -33,7 +33,7 @@
                             <td><?=$product['sale']?> %</td>
                             <td><?=$product['view']?></td>
                             <td>
-                                <a class="btn btn-success rounded-pill button " href="#"
+                                <a class="btn btn-success rounded-pill button " href="index.php?viewEditProduct&id_product=<?=$product['id_product']?>"
                                     role="button">Sửa</a>
                                 <a class="btn btn-success rounded-pill button" href="index.php?deleteProduct&id_product=<?=$product['id_product']?>"
                                     role="button">Xóa</a>
