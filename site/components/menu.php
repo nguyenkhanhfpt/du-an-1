@@ -47,7 +47,7 @@
                         </div>
                         <a class="dropdown-item" href="#"><img src="<?=$URL_IMG?>/account.svg" width="18px"> <span>Thông
                                 tin</span></a>
-                        <a class="dropdown-item" href="admin/"><img src="<?=$URL_IMG?>/settings.svg" width="18px">
+                        <a class="dropdown-item" href="<?=$URL_ADMIN?>"><img src="<?=$URL_IMG?>/settings.svg" width="18px">
                             <span>Quản lý</span></a>
                         <a class="dropdown-item" href="#"><img src="<?=$URL_IMG?>/logout.svg" width="18px"> <span>Đăng
                                 xuất</span></a>

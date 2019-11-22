@@ -81,7 +81,7 @@
                                 <div class="name-over">
                                     <a href="#" class="name text-decoration-none"><?=$product['name_product']?></a>
                                 </div>
-                                <p class="price mb-0"><?=$product['price_product']?> đ</p>
+                                <p class="price mb-0"><?=number_format($product['price_product'])?> đ</p>
                             </div>
                             <div class="display-card">
                                 <a href="#" class="shadow rounded">
