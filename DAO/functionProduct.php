@@ -15,7 +15,6 @@
         $insert = "INSERT INTO products(name_product, price_product, sale, kind_product, img_product, description, view)
         VALUES('$name_product','$price_product','$sale','$kind_product','$img_product','$description',0)";
 
-        echo $insert;
         $db->exec($insert);
     }
     

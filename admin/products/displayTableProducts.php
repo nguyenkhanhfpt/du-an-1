@@ -1,3 +1,9 @@
+<?php if(strlen($message)) : ?>
+    <div class="alert alert-success">
+        <?=$message?>
+    </div>
+<?php endif ?>
+
 <div class="card">
     <div class="card-body">
         <h5>Danh sách Đồ ăn & Đồ uống</h5>
@@ -29,7 +35,7 @@
                             <td>
                                 <a class="btn btn-success rounded-pill button " href="#"
                                     role="button">Sửa</a>
-                                <a class="btn btn-success rounded-pill button" href="#"
+                                <a class="btn btn-success rounded-pill button" href="index.php?deleteProduct&id_product=<?=$product['id_product']?>"
                                     role="button">Xóa</a>
                             </td>
                         </tr>

@@ -14,6 +14,13 @@
         $message = 'Thêm mới thành công!';
         $view_name = 'viewAddProduct.php';
     }
+    else if(array_key_exists('deleteProduct', $_REQUEST)){
+        deleteProduct($id_product);
+        $message = 'Xóa thành công!';
+        $products = selectProducts();
+        $view_name = 'displayTableProducts.php';
+    }
+    
     else{
         $products = selectProducts();
         $view_name = 'displayTableProducts.php';
