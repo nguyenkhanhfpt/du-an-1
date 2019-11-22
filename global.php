@@ -5,4 +5,16 @@
     $URL_IMG = $URL . '/images';
     $URL_CSS = $URL .'/css';
     $URL_JS = $URL .'/js';
+
+    $DIR_IMG =  $_SERVER["DOCUMENT_ROOT"] .$URL_IMG;
+
+
+    function save_file($file_name, $target_dir){
+        $file_uploaded = $_FILES[$file_name];
+        $name_img = $file_uploaded['name'];
+        $target_path = $target_dir . '/' .$name_img;
+        move_uploaded_file($file_uploaded['tmp_name'], $target_path);
+        return $name_img;
+    }
+
 ?>
