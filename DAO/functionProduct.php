@@ -13,7 +13,7 @@
     function selectProducts(){
         global $db;
 
-        $select = "SELECT * FROM products";
+        $select = "SELECT * FROM products ORDER BY id_product DESC";
 
         return $db->query($select);
     }
