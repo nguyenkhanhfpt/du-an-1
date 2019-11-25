@@ -77,6 +77,11 @@ section{
     max-width: 85%;
     margin: 0 auto;
 }
+@media screen and (min-width: 1200px) {
+    section p, section strong {
+        font-size: 15px;
+    }
+}
 
 
 
@@ -159,6 +164,8 @@ article {
         height: 275px;
     }
 }
+
+
 
 
 
