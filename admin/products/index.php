@@ -33,9 +33,8 @@
         updateProduct($id_product, $name_product, $price_product, $sale, $kind_product, $img_product, $description);
 
         $message = 'Thay đổi thành công!';
-        // $product = selectProduct($id_product);
-        $products = selectProducts();
-        $view_name = 'displayTableProducts.php';
+        $product = selectProduct($id_product);
+        $view_name = 'editProduct.php';
     }
     
     else{

@@ -56,6 +56,7 @@
                     placeholder="Description"></textarea>
             </div>
             <button type="submit" class="btn btn-success" name="addNewProduct">Thêm mới</button>
+            <a href="<?=$URL_ADMIN?>/products" class="btn btn-success">Danh sách sản phẩm</a>
         </form>
     </div>
 </div>

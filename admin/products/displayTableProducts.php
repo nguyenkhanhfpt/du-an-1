@@ -36,7 +36,7 @@
                                 <a class="btn btn-success rounded-pill button " href="index.php?viewEditProduct&id_product=<?=$product['id_product']?>"
                                     role="button">Sửa</a>
                                 <a class="btn btn-success rounded-pill button" href="index.php?deleteProduct&id_product=<?=$product['id_product']?>"
-                                    role="button">Xóa</a>
+                                    role="button" onclick="return confirm('Bạn có muốn xóa sản phẩm này ?')">Xóa</a>
                             </td>
                         </tr>
                     <?php endforeach ?>

@@ -59,6 +59,7 @@
                     placeholder="Description"><?=$product['description']?></textarea>
             </div>
             <button type="submit" class="btn btn-success" name="editProduct">Thay đổi</button>
+            <a href="<?=$URL_ADMIN?>/products" class="btn btn-success">Danh sách sản phẩm</a>
         </form>
     </div>
 </div>
