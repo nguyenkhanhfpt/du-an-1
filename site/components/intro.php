@@ -13,6 +13,7 @@
             <div class="overflow-hidden py-xl-5 py-md-3 py-2 px-xl-6 px-md-3 px-3 d-flex flex-column flex-md-row align-items-center">
                 <img src="<?=$URL_IMG?>/piggy-bank.svg" class="img_intro" width="35px">
                 <div class="pl-md-3 small text-center text-md-left">
+
                     <strong class="d-block mb-1">Tiết kiệm tiền</strong>
                     <p class="m-0">Sản phẩm với giá ưu đãi</p>
                 </div>
