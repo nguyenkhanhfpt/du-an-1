@@ -210,6 +210,14 @@ footer .text p{
 }
 
 
+/* Phần form đăng nhập đăng ký */
+
+@media screen and (max-width: 700px) {
+    .form {
+        width: 75% !important;
+    }
+}
+
 
 
 
