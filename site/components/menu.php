@@ -1,14 +1,14 @@
-<nav>
+<nav class="border-bottom">
     <div class="container">
         <div class="row py-2 py-md-4">
             <div class="col-4 col-md-3">
-                <a href=""><img src="<?=$URL_IMG?>/new-logo.png" width="150px"></a>
+                <a href="<?=$URL_SITE?>"><img src="<?=$URL_IMG?>/new-logo.png" width="150px"></a>
             </div>
             <div class="col text-menu d-flex justify-content-center">
                 <div class="d-none d-md-block">
                     <ul class="nav menu-top text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">TRANG CHỦ</a>
+                            <a class="nav-link" href="<?=$URL_SITE?>">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">ĐỒ ĂN & ĐỒ UỐNG</a>
@@ -22,7 +22,7 @@
                                 TÀI KHOẢN
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#login">ĐĂNG
+                                <a class="dropdown-item" href="<?=$URL_SITE?>/index.php?login" data-target="#login">ĐĂNG
                                     NHẬP</a>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin">ĐĂNG
                                     KÝ</a>
@@ -61,7 +61,7 @@
                     <div class="border position-absolute sub-menu-button" style="z-index: 10;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a href="#">Trang chủ</a>
+                                <a href="<?=$URL_SITE?>">Trang chủ</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="">Sản phẩm</a>
@@ -75,7 +75,7 @@
                                     Tài khoản
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu">
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#login">Đăng
+                                    <a class="dropdown-item" href="<?=$URL_SITE?>?login" data-target="#login">Đăng
                                         nhập</a>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signin">Đăng
                                         ký</a>

@@ -174,11 +174,40 @@ footer{
     height: 200px;
 }
 footer .text p{
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 1px;
 }
 
+@media screen and (max-width: 700px){
+    footer h5 {
+        font-size: 18px;
+    }
+    .text{
+        margin-bottom: 20px;
+    }
+    footer .text p{
+        font-size: 13px;
+    }
+}
 
+
+
+
+/* Phần gạch dưới chữ */
+.aline-text:after{
+    content: '';
+    width: 9%;
+    height: 3px;
+    background-color: #36A82B;
+    display: block;
+    margin: 4px auto;
+}
+
+@media screen and (max-width: 900px) {
+    .aline-text:after{
+        width: 20%;
+    }
+}
 
 
 
