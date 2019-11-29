@@ -219,6 +219,13 @@ footer .text p{
 }
 
 
+.toast{
+    position: absolute;
+    top: 170px;
+    right: 20px;
+}
+
+
 
 
 
