@@ -54,21 +54,21 @@ nav {
 
 /* header */
 
-header {
+ header {
     height: 430px;
     width: 100%;
 }
-.ma5slider .slide img, .ma5slider>img.slide {
+.ma5slider, .ma5slider .navs-wrapper , .ma5slider .slide img, .ma5slider>img.slide {
     height: 430px;
 }
 @media screen and (max-width: 600px) {
     header{
         height: 250px;
     }
-    .ma5slider .slide img, .ma5slider>img.slide {
+    .ma5slider, .ma5slider .navs-wrapper , .ma5slider .slide img, .ma5slider>img.slide  {
         height: 250px;
     }
-}
+} 
 
 
 
