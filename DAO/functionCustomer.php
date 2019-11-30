@@ -28,6 +28,14 @@
         VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', 'user.jpg', 0)";
 
         $db->exec($insert);
+
+        $_SESSION['id_customer'] = $id_customer;
+        $_SESSION['name_customer'] = getName($id_customer);
+        $_SESSION['role'] = getRole($id_customer);
+
+        if(isset($_SESSION['id_customer'])) {
+            header("Location: ../?successSignin");
+        }
     }
 
     function checkLogin($id_customer, $password) {
