@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 col-md-5 ">
-            <img src="<?= $URL_IMG ?>/<?=$viewProduct['img_product']?>" alt="" width="100%" height="470px">
+            <img src="<?= $URL_IMG ?>/<?= $viewProduct['img_product'] ?>" alt="" width="100%" height="470px">
         </div>
         <div class="col-12 col-md-7">
-            <h2 class="font-weight-bold mb-3 mt-3"><?=$viewProduct['name_product']?></h2>
+            <h2 class="font-weight-bold mb-3 mt-3"><?= $viewProduct['name_product'] ?></h2>
 
             <!-- Phần đánh giá -->
             <div class="page">
@@ -156,20 +156,30 @@
         <?php foreach ($relatedProducts as $product) : ?>
             <div class="col-6 col-md-3">
                 <div class="border product mb-3">
-                    <a href="<?= $URL_SITE ?>?viewProduct">
+                    <a href="<?= $URL_SITE ?>?viewProduct&id_product=<?= $product['id_product'] ?>">
                         <img src="<?= $URL_IMG ?>/<?= $product['img_product'] ?>" width="100%">
                     </a>
                     <div class="card-body text-center">
                         <div class="name-over">
                             <a href="<?= $URL_SITE ?>?viewProduct" class="name text-decoration-none"><?= $product['name_product'] ?></a>
                         </div>
-                        <p class="price mb-0"><?= number_format($product['price_product']) ?> đ</p>
+                        <?php if ($product['sale'] > 0) : ?>
+                            <p class="price mb-0"><span><?= number_format($product['price_product']) ?> đ</span> <?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</p>
+                        <?php else : ?>
+                            <p class="price mb-0"><?= number_format($product['price_product']) ?> đ</p>
+                        <?php endif ?>
                     </div>
                     <div class="display-card">
                         <a href="<?= $URL_SITE ?>?cart" class="shadow rounded">
                             <img src="<?= $URL_IMG ?>/shopping-cart.svg" alt="" width="25px">
                         </a>
                     </div>
+                    <!-- Sale    -->
+                    <?php if ($product['sale'] > 0) : ?>
+                        <div class="sale rounded-pill">
+                            Sale
+                        </div>
+                    <?php endif ?>
                 </div>
             </div>
         <?php endforeach ?>

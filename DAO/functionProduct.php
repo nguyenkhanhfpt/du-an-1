@@ -50,4 +50,9 @@
         $delete = "DELETE FROM products WHERE id_product = $id_product";
         $db->exec($delete);
     }
+
+    function priceAfterSale($percent, $price){
+        $ratio = (100 - $percent) / 100;
+        return  number_format($price * $ratio);
+    }
 ?>
