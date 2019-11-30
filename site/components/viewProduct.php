@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 col-md-5 ">
-            <img src="<?= $URL_IMG ?>/my.png" alt="" width="100%" height="470px">
+            <img src="<?= $URL_IMG ?>/<?=$viewProduct['img_product']?>" alt="" width="100%" height="470px">
         </div>
         <div class="col-12 col-md-7">
-            <h2 class="font-weight-bold mb-3 mt-3">Mỳ Quảng</h2>
+            <h2 class="font-weight-bold mb-3 mt-3"><?=$viewProduct['name_product']?></h2>
 
             <!-- Phần đánh giá -->
             <div class="page">

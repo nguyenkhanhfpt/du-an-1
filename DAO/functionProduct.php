@@ -4,7 +4,7 @@
     function selectProduct($id_product){
         global $db;
 
-        $select = "SELECT * FROM products WHERE id_product = $id_product";
+        $select = "SELECT * FROM products WHERE id_product = '$id_product'";
 
         $product = $db->query($select);
         return $product->fetch();

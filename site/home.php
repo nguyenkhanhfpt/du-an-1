@@ -34,7 +34,7 @@
             <?php foreach ($products as $product) : ?>
                 <div class="col-6 col-md-3">
                     <div class="border product mb-3">
-                        <a href="<?= $URL_SITE ?>?viewProduct">
+                        <a href="<?= $URL_SITE ?>?viewProduct&id_product=<?=$product['id_product']?>">
                             <img src="<?= $URL_IMG ?>/<?= $product['img_product'] ?>" width="100%">
                         </a>
                         <div class="card-body text-center">

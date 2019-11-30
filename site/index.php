@@ -7,12 +7,15 @@
     $message = '';
     $err = '';
 
+    extract($_REQUEST);
+
     if(array_key_exists('login', $_REQUEST)) {
         $view_name = 'components/login.php';
     }
 
     else if(array_key_exists('viewProduct', $_REQUEST)) {
         $relatedProducts = selectProductsLimit();
+        $viewProduct = selectProduct($id_product);
         $view_name = 'components/viewProduct.php';
     }
     
