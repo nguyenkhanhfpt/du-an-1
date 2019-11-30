@@ -28,6 +28,6 @@
             <span class="small d-block float-md-right">Quên mật khẩu? Nhấn vào <a href="">đây</a></span>
         </div>
         
-        <button type="submit" class="btn btn-success">Đăng nhập</button>
+        <button type="submit" name="login" class="btn btn-success">Đăng nhập</button>
     </form>
 </div>
