@@ -24,6 +24,9 @@ nav {
     font-weight: 700;
     
 }
+.menu-logo {
+    width: 150px;
+}
 .text-menu{
     padding-right: 5rem;
 }
@@ -67,6 +70,9 @@ nav {
     }
     .ma5slider, .ma5slider .navs-wrapper , .ma5slider .slide img, .ma5slider>img.slide  {
         height: 250px;
+    }
+    .menu-logo{
+        width: 100px;
     }
 } 
 

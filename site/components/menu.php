@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-2 py-md-4">
             <div class="col-3 col-md-3">
-                <a href="<?=$URL_SITE?>"><img src="<?=$URL_IMG?>/new-logo.png" width="150px"></a>
+                <a href="<?=$URL_SITE?>"><img src="<?=$URL_IMG?>/new-logo.png" class="menu-logo"></a>
             </div>
             <div class="col text-menu d-flex justify-content-center">
                 <div class="d-none d-md-block">

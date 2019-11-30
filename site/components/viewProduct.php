@@ -164,7 +164,7 @@
                             <a href="<?= $URL_SITE ?>?viewProduct" class="name text-decoration-none"><?= $product['name_product'] ?></a>
                         </div>
                         <?php if ($product['sale'] > 0) : ?>
-                            <p class="price mb-0"><span><?= number_format($product['price_product']) ?> đ</span> <?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</p>
+                            <p class="price mb-0"><span class="d-none d-sm-inline-block"><?= number_format($product['price_product']) ?> đ</span> <?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</p>
                         <?php else : ?>
                             <p class="price mb-0"><?= number_format($product['price_product']) ?> đ</p>
                         <?php endif ?>
