@@ -26,6 +26,7 @@
     </script>
 
     <link rel="stylesheet" href="<?=$URL_CSS?>/index.css">
+    <link rel="stylesheet" href="<?=$URL_CSS?>/viewProduct.css">
 </head>
 
 <body>

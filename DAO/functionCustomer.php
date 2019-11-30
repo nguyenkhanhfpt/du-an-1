@@ -1,6 +1,14 @@
 <?php
     require_once 'database.php';
 
+    function selectCustomers() {
+        global $db;
+
+        $select = "SELECT * FROM customers ";
+
+        return $db->query($select);
+    }
+
     function getRole($id_customer) {
         global $db;
 

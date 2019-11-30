@@ -93,7 +93,7 @@ article {
     position: relative;
 }
 .product img{
-    height: 230px;
+    height: 200px;
 }
 .product-content{
     z-index: 100 !important;
@@ -123,6 +123,12 @@ article {
     font-size: 15px;
     text-decoration: line-through;
 }
+.old-price{
+    font-weight: 400;
+    color: #bebebe;
+    font-size: 21px;
+    text-decoration: line-through;
+}
 .sale{
     position: absolute;
     top: 5px;
@@ -143,7 +149,7 @@ article {
     z-index: 2;
 }
 .display-card a{
-    padding: 13px;
+    padding: 11px;
     background-color: white;
     opacity: 0;
     transition: all 0.3s linear;
@@ -218,12 +224,14 @@ footer .text p{
     }
 }
 
-
 .toast{
     position: absolute;
     top: 170px;
     right: 20px;
 }
+
+
+
 
 
 

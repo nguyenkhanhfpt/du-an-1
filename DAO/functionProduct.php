@@ -18,6 +18,14 @@
         return $db->query($select);
     }
 
+    function selectProductsLimit(){
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY id_product DESC LIMIT 4";
+
+        return $db->query($select);
+    }
+
     function insertProduct($name_product, $price_product, $sale, $kind_product, $img_product, $description){
         global $db;
         
