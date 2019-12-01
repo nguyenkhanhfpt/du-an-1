@@ -202,6 +202,16 @@ footer .text p{
     }
 }
 
+.scrollTop {
+    padding: 7px 14px;
+    font-size: 20px;
+    background: #36a82b;
+    
+}
+.scrollTop a{
+    color: white;
+}
+
 
 
 
@@ -209,7 +219,7 @@ footer .text p{
 .aline-text:after{
     content: '';
     width: 9%;
-    height: 3px;
+    height: 2.4px;
     background-color: #36A82B;
     display: block;
     margin: 4px auto;
