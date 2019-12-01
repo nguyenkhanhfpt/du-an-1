@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" href="<?= $URL_CSS ?>/index.css">
     <link rel="stylesheet" href="<?= $URL_CSS ?>/viewProduct.css">
+    <link rel="stylesheet" href="<?= $URL_CSS ?>/product.css">
 </head>
 
 <body>

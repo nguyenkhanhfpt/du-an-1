@@ -11,7 +11,7 @@
                             <a class="nav-link" href="<?=$URL_SITE?>">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ĐỒ ĂN & ĐỒ UỐNG</a>
+                            <a class="nav-link" href="<?=$URL_SITE?>/products">ĐỒ ĂN & ĐỒ UỐNG</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">CỘNG ĐỒNG</a>
@@ -69,7 +69,7 @@
                                 <a href="<?=$URL_SITE?>">Trang chủ</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="">Sản phẩm</a>
+                                <a href="<?=$URL_SITE?>/products">Sản phẩm</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="">Cộng đồng</a>

@@ -1,0 +1,37 @@
+.input-affix {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-affix .prefix-icon, .input-affix .suffix-icon {
+    position: absolute;
+    top: 20%;
+    z-index: 990;
+    line-height: 1.5;
+    left: 12px;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 0.07rem rgba(0,123,255,.25);
+}
+
+.input-affix .form-control{
+    padding-left: 35px;
+    height: auto;
+    color: #53535f;
+    border: 1px solid #eee;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.categories{
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.top-product {
+    line-height: 13px;
+    font-size: 17px;
+}
