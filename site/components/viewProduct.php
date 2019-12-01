@@ -50,8 +50,12 @@
                     <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z" />
                 </symbol>
             </svg>
-
-            <h3 class="font-weight-bold mt-1" style="color: #36A82B">20,000 đ <span class="old-price">25,000 đ</span></h3>
+            
+            <?php if ($viewProduct['sale'] > 0) : ?>
+                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?=priceAfterSale($viewProduct['sale'], $viewProduct['price_product'])?> đ <span class="old-price"><?=number_format($viewProduct['price_product'])?> đ</span></h3>
+            <?php else : ?>
+                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?=number_format($viewProduct['price_product'])?> đ</h3>
+            <?php endif ?>
             <hr>
             <p class="text-justify my-4">Aenean id ullamcorper libero. Vestibulum imperdiet nibh.
                 Lorem ullamcorper volutpat. Vestibulum lacinia risus. Etiam sagittis ullamcorper volutpat.

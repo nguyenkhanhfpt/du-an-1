@@ -41,7 +41,7 @@
     <?php require 'components/footer.php' ?>
 
 
-    <div id="stop" class="scrollTop d-none d-md-block" style="position:fixed;bottom: 100px;right: 55px;">
+    <div id="stop" class="scrollTop d-none d-md-block" style="position:fixed;bottom: 90px;right: 55px;">
         <a href=""><i class="fa fa-angle-double-up"></i></a>
     </div>
 

@@ -38,7 +38,7 @@ nav {
     width: 100px;
 }
 .sub-menu-button{
-    top: 50px;
+    top: 42px;
     right: 0;
     display: none;
 }
@@ -205,8 +205,10 @@ footer .text p{
 .scrollTop {
     padding: 7px 14px;
     font-size: 20px;
-    background: #36a82b;
-    
+    background: #36a82b; 
+}
+.scrollTop:hover {
+    box-shadow: 1px 1px 5px gray;
 }
 .scrollTop a{
     color: white;
