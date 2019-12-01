@@ -44,6 +44,16 @@
 
         $db->exec($update);
     }
+
+    function updateViewProduct($id_product){
+        global $db;
+        
+        $update = "UPDATE products 
+                SET view = view + 1
+                WHERE id_product = $id_product ";
+
+        $db->exec($update);
+    }
     
     function deleteProduct($id_product) {
         global $db;

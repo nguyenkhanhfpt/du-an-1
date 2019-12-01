@@ -14,6 +14,7 @@
     }
 
     else if(array_key_exists('viewProduct', $_REQUEST)) {
+        updateViewProduct($id_product);
         $relatedProducts = selectProductsLimit();
         $viewProduct = selectProduct($id_product);
         $view_name = 'components/viewProduct.php';
