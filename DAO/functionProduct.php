@@ -26,6 +26,14 @@
         return $db->query($select);
     }
 
+    function selectTopView() {
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY view DESC LIMIT 5";
+
+        return $db->query($select);
+    }
+
     function insertProduct($name_product, $price_product, $sale, $kind_product, $img_product, $description){
         global $db;
         
@@ -65,4 +73,5 @@
         $ratio = (100 - $percent) / 100;
         return  number_format($price * $ratio);
     }
+
 ?>

@@ -78,7 +78,7 @@
                             </a>
                             <div class="card-body text-center">
                                 <div class="name-over">
-                                    <a href="<?= $URL_SITE ?>?viewProduct" class="name text-decoration-none"><?= $product['name_product'] ?></a>
+                                    <a href="<?= $URL_SITE ?>?viewProduct&id_product=<?= $product['id_product'] ?>" class="name text-decoration-none"><?= $product['name_product'] ?></a>
                                 </div>
                                 <?php if ($product['sale'] > 0) : ?>
                                     <p class="price mb-0"><span class="d-none d-sm-inline-block"><?= number_format($product['price_product']) ?> đ</span> <?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</p>
