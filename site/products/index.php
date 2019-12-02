@@ -3,11 +3,11 @@
     require '../../global.php';
     require '../../DAO/functionProduct.php';
 
-    $products = selectProducts();
     $topProducts = selectTopView();
+    $products = orderDefault();
 
     $view_name = 'view.php';
-
+    
     require '../layout.php';
 
 ?>

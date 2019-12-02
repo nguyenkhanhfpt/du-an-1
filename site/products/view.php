@@ -11,16 +11,16 @@
             </form>
         </div>
         <div class="d-none d-md-block col-md-9">
-            <form action="">
+            <form action="order.php" method="GET" id="formOrder">
                 <div class="form-group d-flex justify-content-end align-items-center">
                     <label class="text-secondary m-0 pr-2" for="">Sắp xếp theo: </label>
-                    <select class="form-control rounded-0 w-20" id="">
-                        <option>Mặc định</option>
-                        <option>Mới nhất</option>
-                        <option>Xem nhiều nhất</option>
-                        <option>Giá thấp nhất</option>
-                        <option>Giá cao nhất</option>
-                        <option>Bảng chữ cái</option>
+                    <select class="form-control rounded-0 w-20" id="order" name="order">
+                        <option>----</option>
+                        <option value="default">Mặc định</option>
+                        <option value="new">Mới nhất</option>
+                        <option value="viewest">Xem nhiều nhất</option>
+                        <option value="lowestPrice">Giá thấp nhất</option>
+                        <option value="highestPrice">Giá cao nhất</option>
                     </select>
                 </div>
             </form>
@@ -104,3 +104,14 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+    let order = document.getElementById('order');
+    let formOrder = document.getElementById('formOrder');
+
+    order.onchange = () => {
+        formOrder.submit();
+    }
+</script>

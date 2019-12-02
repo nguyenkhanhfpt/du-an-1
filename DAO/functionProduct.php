@@ -74,4 +74,37 @@
         return  number_format($price * $ratio);
     }
 
+    function orderDefault() {
+        global $db;
+
+        $select = "SELECT * FROM products";
+
+        return $db->query($select);
+    }
+
+    function orderView() {
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY view DESC";
+
+        return $db->query($select);
+    }
+
+    function orderLowestPrice() {
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY ((100 - sale) / 100) * price_product ASC";
+
+        return $db->query($select);
+    }
+
+    function orderHighPrice() {
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY ((100 - sale) / 100) * price_product DESC";
+
+        return $db->query($select);
+    }
+
+    
 ?>

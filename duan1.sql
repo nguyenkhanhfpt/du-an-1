@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2019 lúc 07:51 AM
--- Phiên bản máy phục vụ: 10.3.16-MariaDB
--- Phiên bản PHP: 7.3.6
+-- Thời gian đã tạo: Th12 02, 2019 lúc 07:48 AM
+-- Phiên bản máy phục vụ: 10.4.6-MariaDB
+-- Phiên bản PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,8 +63,16 @@ CREATE TABLE `customers` (
   `img_custumer` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(110) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `address` text COLLATE utf8_unicode_ci NOT NULL,
   `role` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `customers`
+--
+
+INSERT INTO `customers` (`id_customer`, `password`, `name_customer`, `gender`, `img_custumer`, `email`, `phone`, `address`, `role`) VALUES
+('nguyenkhanh', '123456', 'Nguyen Khanh', 'Nam', 'user.jpg', 'khanh26122000@gmail.com', '0868003429', '54/82 Nguyá»…n LÆ°Æ¡ng Báº±ng', 3);
 
 -- --------------------------------------------------------
 
@@ -107,7 +115,7 @@ INSERT INTO `products` (`id_product`, `name_product`, `img_product`, `price_prod
 (3, 'BÃ¡nh xÃ¨o', 'banhxeo.jpg', 20000, 0, 0, 'MÃ³n chÃ­nh', ''),
 (4, 'Má»³ quáº£ng PhÃº ChiÃªm', 'my.png', 15000, 0, 0, 'MÃ³n chÃ­nh', ''),
 (6, 'BÃ¡nh káº¹p ÄÃ  Náºµng', 'banh-kep.png', 5000, 0, 0, 'Äá»“ Äƒn váº·t', ''),
-(12, 'TrÃ  Ä‘Ã o', 'tra-dao.jpg', 25000, 0, 0, 'NÆ°á»›c uá»‘ng', '');
+(12, 'TrÃ  Ä‘Ã o', 'tra-dao.jpg', 25000, 10, 0, 'MÃ³n chÃ­nh', '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
