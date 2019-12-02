@@ -50,11 +50,11 @@
                     <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z" />
                 </symbol>
             </svg>
-            
+
             <?php if ($viewProduct['sale'] > 0) : ?>
-                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?=priceAfterSale($viewProduct['sale'], $viewProduct['price_product'])?> đ <span class="old-price"><?=number_format($viewProduct['price_product'])?> đ</span></h3>
+                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= priceAfterSale($viewProduct['sale'], $viewProduct['price_product']) ?> đ <span class="old-price"><?= number_format($viewProduct['price_product']) ?> đ</span></h3>
             <?php else : ?>
-                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?=number_format($viewProduct['price_product'])?> đ</h3>
+                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= number_format($viewProduct['price_product']) ?> đ</h3>
             <?php endif ?>
             <hr>
             <p class="text-justify my-4">Aenean id ullamcorper libero. Vestibulum imperdiet nibh.
@@ -108,20 +108,77 @@
                 like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="border mx-3 mx-md-4 mb-4 p-3 rounded shadow-sm">
-                    <h4 class="font-weight-bold">Bình luận</h4>
-                    <form action="index.php" method="POST">
-                        <div class="form-group">
-                            <input type="hidden" value="11" name="ma_hh">
-                            <input type="text" class="form-control" placeholder="Nhập bình luận..." name="noi_dung">
+                <div class="border rounded py-3 px-3 comment">
+                    <form action="index.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-12 col-md-4 mb-2">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Đánh giá</h5>
+
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="review1" value="5" name="review" class="custom-control-input">
+                                            <label class="custom-control-label" for="review1" >Tuyệt vời</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="review2" value="4" name="review" class="custom-control-input">
+                                            <label class="custom-control-label" for="review2" >Tốt</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="review3" value="3" name="review" class="custom-control-input">
+                                            <label class="custom-control-label" for="review3" >Khá tốt</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="review4" value="2" name="review" class="custom-control-input">
+                                            <label class="custom-control-label" for="review4" >Trung bình</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="review5" value="1" name="review" class="custom-control-input">
+                                            <label class="custom-control-label" for="review5" >Kém</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 pl-md-0">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <div class="form-group mb-2 border-bottom">
+                                            <input type="text" name="title_comment" class="form-control border-0" placeholder="Nhập tiêu đề bình luận" required>
+                                        </div>
+                                        <div class="form-group mb-1">
+                                            <textarea name="content_comment" class="form-control border-0" rows="5" placeholder="Nhập nội dung bình luận" required></textarea>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <input type="file" name="img_comment" id="add-img" class="d-none">
+                                            <input type="button" id="btn-add-img" value="+ Thêm ảnh" class="btn btn-dark">
+                                            <input type="submit" name="submitComment" value="Đăng bài viết" class="btn btn-success">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <input type="submit" value="Đăng tải" name="binh-luan" class="btn btn-primary">
                     </form>
                 </div>
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">3</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="row">
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="<?=$URL_IMG?>/banhxeo.jpg" alt="" width="100%" height="177px">
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="<?=$URL_IMG?>/banhxeo.jpg" alt="" width="100%" height="177px">
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
+
+
+    <script>
+        document.getElementById('btn-add-img').onclick = () => {
+            document.getElementById('add-img').click();
+        }
+    </script>
 
 
 

@@ -38,6 +38,10 @@
         $view_name = 'components/login.php';
         $err = "Đăng nhập thất bại!";
     }
+
+    else if(array_key_exists('submitComment', $_REQUEST)) {
+        
+    }
     
     else{
         $view_name = 'home.php';
