@@ -19,6 +19,7 @@
         updateViewProduct($id_product);
         $relatedProducts = selectProductsLimit();
         $viewProduct = selectProduct($id_product);
+        $comments = selectComment($id_product);
         $view_name = 'components/viewProduct.php';
     }
     

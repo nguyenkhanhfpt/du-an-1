@@ -10,4 +10,16 @@
         $db->exec($insert);
     }
 
+    function selectComment($id_product) {
+        global $db;
+
+        $select = "SELECT CM.*, CU.name_customer, CU.img_customer  
+                FROM comments AS CM
+                INNER JOIN customers AS CU
+                ON CM.id_customer_comment = CU.id_customer
+                WHERE CM.id_product_comment = $id_product";
+
+        return $db->query($select);
+    }
+
 ?>

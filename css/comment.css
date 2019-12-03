@@ -1,4 +1,16 @@
 .comment{
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(246, 246, 246);
 }
 
+.images-img img {
+    height: 140px;
+}
+
+@media screen and (min-width: 1000px) {
+    .images-img img {
+        height: 177px;
+    }
+    .box-comment {
+        width: 75% !important;
+    }
+}

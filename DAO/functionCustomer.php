@@ -32,8 +32,8 @@
     function insertCustomer($id_customer, $name_customer, $phone, $email, $address, $gender, $password){
         global $db;
         
-        $insert = "INSERT INTO customers(id_customer, name_customer, phone, email, address, gender, password, img_custumer, role)
-        VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', 'user.jpg', 0)";
+        $insert = "INSERT INTO customers(id_customer, name_customer, phone, email, address, gender, password, img_customer, role)
+        VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', 'user.svg', 0)";
 
         $db->exec($insert);
 
