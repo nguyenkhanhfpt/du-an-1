@@ -84,7 +84,6 @@
                                 <td><?= $employee['phone'] ?></td>
                                 <td><?= $employee['address'] ?></td>
                                 <td>
-                                    <a class="btn btn-success rounded-pill button " href="index.php?viewDetailCustomer&id_customer=<?= $employee['id_customer'] ?>" role="button">Chi tiết</a>
                                     <a class="btn btn-success rounded-pill button " href="index.php?viewEditCustomer&id_customer=<?= $customer['id_customer'] ?>" role="button">Chỉnh sửa</a>
                                     <a class="btn btn-success rounded-pill button" href="index.php?deleteCustomer&id_customer=<?= $employee['id_customer'] ?>" role="button" onclick="return confirm('Bạn có muốn xóa người dùng này ?')">Xóa</a>
                                 </td>

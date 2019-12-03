@@ -22,6 +22,15 @@
         $view_name = 'viewTableCustomer.php';
     }
 
+    else if(array_key_exists('viewEditCustomer', $_REQUEST)) {
+        $customer = selectCustomerId($id_customer);
+        $view_name = 'viewEditCustomer.php';
+    }
+
+    else if(array_key_exists('editCustomer', $_REQUEST)) {
+        $view_name = 'viewEditCustomer.php';
+    }
+
     else {
         $customers = selectCustomers();
         $employees = selectEmployee();

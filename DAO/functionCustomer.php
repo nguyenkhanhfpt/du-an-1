@@ -9,6 +9,15 @@
         return $db->query($select);
     }
 
+    function selectCustomerId($id_customer) {
+        global $db;
+
+        $select = "SELECT * FROM customers WHERE id_customer = '$id_customer' ";
+
+        $customers = $db->query($select);
+        return $customers->fetch();
+    }
+
     function selectEmployee() {
         global $db;
 
