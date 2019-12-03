@@ -4,6 +4,7 @@
     require '../global.php';
     require '../DAO/functionProduct.php';
     require '../DAO/functionComment.php';
+    require '../DAO/functionUploadImg.php';
     $products = selectProducts();
 
     $message = '';
@@ -20,6 +21,7 @@
         $relatedProducts = selectProductsLimit();
         $viewProduct = selectProduct($id_product);
         $comments = selectComment($id_product);
+        $allImgUpload = selectImgUpload($id_product);
         $view_name = 'components/viewProduct.php';
     }
     
@@ -56,6 +58,12 @@
             header('Location: index.php?viewProduct&id_product=' .$id_product);
         }
         
+    }
+
+    else if(array_key_exists('uploadImg', $_REQUEST)) {
+        $img_upload = save_file("img_upload", $DIR_IMG .'/imgUpload');
+        insertImg($img_upload, $id_product);
+        header('Location: index.php?viewProduct&id_product=' .$id_product);
     }
     
     else{

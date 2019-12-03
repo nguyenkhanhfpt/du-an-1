@@ -117,15 +117,18 @@
         <!-- Phần xem ảnh -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
             <div class="row">
-                <div class="col-4 col-md-2 mb-3 images-img">
-                    <img src="<?= $URL_IMG ?>/banhxeo.jpg" class="rounded shadow-sm" width="100%">
-                </div>
-                <div class="col-4 col-md-2 mb-3 images-img">
-                    <img src="<?= $URL_IMG ?>/banhxeo.jpg" class="rounded shadow-sm" width="100%">
-                </div>
+                <?php foreach($allImgUpload as $img): ?>
+                    <div class="col-4 col-md-2 mb-3 images-img">
+                        <img src="<?= $URL_IMG ?>/imgUpload/<?=$img['img_upload']?>" class="rounded shadow-sm" width="100%">
+                    </div>
+                <?php endforeach ?>
                 <div class="col-4 col-md-2 mb-3">
-                    <input type="file" name="" id="add-img2" class="d-none">
-                    <input type="button" id="btn-add-img2" class="btn btn-secondary w-100 h-100" value="Đăng ảnh">
+                    <form action="index.php" method="POST" enctype="multipart/form-data" class="h-100">
+                        <input type="hidden" name="id_product" value="<?= $viewProduct['id_product'] ?>">
+                        <input type="file" name="img_upload" id="add-img2" class="d-none">
+                        <input type="button" id="btn-add-img2" class="btn btn-secondary w-100 btn-uploadImg" value="Đăng ảnh">
+                        <input type="submit" class="d-none" id="form_upload_img" name="uploadImg" >
+                    </form>   
                 </div>
             </div>
         </div>
@@ -142,5 +145,16 @@
     // thêm ảnh ở tab ảnh
     document.getElementById('btn-add-img2').onclick = () => {
         document.getElementById('add-img2').click();
+    }
+
+    let form_upload_img = document.getElementById('form_upload_img');
+    let add_img = document.getElementById('add-img2');
+
+
+    add_img.onchange = () => {
+        let check = confirm('Bạn có muốn đăng ảnh lên!');
+        if(check == true) {
+            form_upload_img.click();
+        }
     }
 </script>

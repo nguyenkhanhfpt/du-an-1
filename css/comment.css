@@ -2,12 +2,12 @@
     background-color: rgb(246, 246, 246);
 }
 
-.images-img img {
+.images-img img, .btn-uploadImg {
     height: 140px;
 }
 
 @media screen and (min-width: 1000px) {
-    .images-img img {
+    .images-img img , .btn-uploadImg{
         height: 177px;
     }
     .box-comment {
