@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 02, 2019 lúc 07:48 AM
+-- Thời gian đã tạo: Th12 03, 2019 lúc 07:47 AM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.1.32
 
@@ -42,12 +42,22 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `comments` (
   `id_comment` int(11) NOT NULL,
+  `title_comment` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
   `content_comment` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `review` int(1) NOT NULL,
   `id_product_comment` int(12) NOT NULL,
   `id_customer_comment` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `img_comment` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `date_comment` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`id_comment`, `title_comment`, `content_comment`, `review`, `id_product_comment`, `id_customer_comment`, `img_comment`, `date_comment`) VALUES
+(6, 'quÃ¡ hay', 'Cáº§n cáº£i thiá»‡n hÆ¡n', 3, 6, 'nguyenkhanh', 'banhxeo-1.jpg', '2019-12-03 10:14:37'),
+(7, 'hay', '123', 4, 6, 'nguyenkhanh', '', '2019-12-03 10:17:40');
 
 -- --------------------------------------------------------
 
@@ -60,7 +70,7 @@ CREATE TABLE `customers` (
   `password` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
   `name_customer` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `gender` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
-  `img_custumer` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
+  `img_customer` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(110) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `address` text COLLATE utf8_unicode_ci NOT NULL,
@@ -71,8 +81,9 @@ CREATE TABLE `customers` (
 -- Đang đổ dữ liệu cho bảng `customers`
 --
 
-INSERT INTO `customers` (`id_customer`, `password`, `name_customer`, `gender`, `img_custumer`, `email`, `phone`, `address`, `role`) VALUES
-('nguyenkhanh', '123456', 'Nguyen Khanh', 'Nam', 'user.jpg', 'khanh26122000@gmail.com', '0868003429', '54/82 Nguyá»…n LÆ°Æ¡ng Báº±ng', 3);
+INSERT INTO `customers` (`id_customer`, `password`, `name_customer`, `gender`, `img_customer`, `email`, `phone`, `address`, `role`) VALUES
+('nguyenkhanh', '123456', 'Nguyen Khanh', 'Nam', 'user.svg', 'khanh26122000@gmail.com', '0868003429', '54/82 Nguyá»…n LÆ°Æ¡ng Báº±ng', 3),
+('nguyenkhanh1', '123456', 'Nguyen Khanh', 'Nam', 'user.svg', 'khanh26122000@gmail.com', '0868003429', '54/82 Nguyá»…n LÆ°Æ¡ng Báº±ng', 0);
 
 -- --------------------------------------------------------
 
@@ -111,11 +122,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_product`, `name_product`, `img_product`, `price_product`, `sale`, `view`, `kind_product`, `description`) VALUES
-(2, 'TrÃ  sá»¯a Ä‘áº­u Ä‘á»', 'trasua.jpg', 20000, 0, 0, 'TrÃ  sá»¯a', ''),
-(3, 'BÃ¡nh xÃ¨o', 'banhxeo.jpg', 20000, 0, 0, 'MÃ³n chÃ­nh', ''),
-(4, 'Má»³ quáº£ng PhÃº ChiÃªm', 'my.png', 15000, 0, 0, 'MÃ³n chÃ­nh', ''),
-(6, 'BÃ¡nh káº¹p ÄÃ  Náºµng', 'banh-kep.png', 5000, 0, 0, 'Äá»“ Äƒn váº·t', ''),
-(12, 'TrÃ  Ä‘Ã o', 'tra-dao.jpg', 25000, 10, 0, 'MÃ³n chÃ­nh', '');
+(2, 'TrÃ  sá»¯a Ä‘áº­u Ä‘á»', 'trasua.jpg', 20000, 0, 28, 'TrÃ  sá»¯a', ''),
+(3, 'BÃ¡nh xÃ¨o', 'banhxeo.jpg', 20000, 0, 1, 'MÃ³n chÃ­nh', ''),
+(4, 'Má»³ quáº£ng PhÃº ChiÃªm', 'my.png', 15000, 0, 31, 'MÃ³n chÃ­nh', ''),
+(6, 'BÃ¡nh káº¹p ÄÃ  Náºµng', 'banh-kep.png', 5000, 0, 92, 'Äá»“ Äƒn váº·t', ''),
+(12, 'TrÃ  Ä‘Ã o', 'tra-dao.jpg', 25000, 10, 88, 'MÃ³n chÃ­nh', '');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -170,7 +181,7 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `detail_bill`
