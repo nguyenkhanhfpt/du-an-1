@@ -1,3 +1,4 @@
+<img src="<?=$URL_IMG?>/poster.jpg" alt="" class="w-100">
 <div class="container">
     <div class="row mt-3 mb-3">
         <div class="col-12 col-md-3">
