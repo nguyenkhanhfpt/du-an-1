@@ -109,6 +109,13 @@
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="border rounded py-3 px-3 comment">
+                    
+                    <?php if (strlen($err)) : ?>
+                        <div class="alert alert-danger">
+                            <?= $err ?>
+                        </div>
+                    <?php endif ?>
+
                     <form action="index.php" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-12 col-md-4 mb-2">
@@ -118,23 +125,23 @@
 
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="review1" value="5" name="review" class="custom-control-input">
-                                            <label class="custom-control-label" for="review1" >Tuyệt vời</label>
+                                            <label class="custom-control-label" for="review1">Tuyệt vời</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="review2" value="4" name="review" class="custom-control-input">
-                                            <label class="custom-control-label" for="review2" >Tốt</label>
+                                            <label class="custom-control-label" for="review2">Tốt</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="review3" value="3" name="review" class="custom-control-input">
-                                            <label class="custom-control-label" for="review3" >Khá tốt</label>
+                                            <label class="custom-control-label" for="review3">Khá tốt</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="review4" value="2" name="review" class="custom-control-input">
-                                            <label class="custom-control-label" for="review4" >Trung bình</label>
+                                            <label class="custom-control-label" for="review4">Trung bình</label>
                                         </div>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="review5" value="1" name="review" class="custom-control-input">
-                                            <label class="custom-control-label" for="review5" >Kém</label>
+                                            <label class="custom-control-label" for="review5">Kém</label>
                                         </div>
                                     </div>
                                 </div>
@@ -149,6 +156,8 @@
                                             <textarea name="content_comment" class="form-control border-0" rows="5" placeholder="Nhập nội dung bình luận" required></textarea>
                                         </div>
                                         <div class="d-flex justify-content-between">
+                                            <!-- Lấy giá trị id_product -->
+                                            <input type="hidden" name="id_product" value="<?= $viewProduct['id_product'] ?>">
                                             <input type="file" name="img_comment" id="add-img" class="d-none">
                                             <input type="button" id="btn-add-img" value="+ Thêm ảnh" class="btn btn-dark">
                                             <input type="submit" name="submitComment" value="Đăng bài viết" class="btn btn-success">
@@ -163,10 +172,10 @@
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 <div class="row">
                     <div class="col-4 col-md-2 mb-3">
-                        <img src="<?=$URL_IMG?>/banhxeo.jpg" alt="" width="100%" height="177px">
+                        <img src="<?= $URL_IMG ?>/banhxeo.jpg" alt="" width="100%" height="177px">
                     </div>
                     <div class="col-4 col-md-2 mb-3">
-                        <img src="<?=$URL_IMG?>/banhxeo.jpg" alt="" width="100%" height="177px">
+                        <img src="<?= $URL_IMG ?>/banhxeo.jpg" alt="" width="100%" height="177px">
                     </div>
                 </div>
             </div>
