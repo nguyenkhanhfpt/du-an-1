@@ -18,6 +18,7 @@
     <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 
     <link rel="stylesheet" href="<?=$URL_CSS?>/admin.css">
+    <link rel="stylesheet" href="<?=$URL_CSS?>/index.css">
 </head>
 
 <body>

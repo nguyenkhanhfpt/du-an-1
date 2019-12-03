@@ -4,7 +4,15 @@
     function selectCustomers() {
         global $db;
 
-        $select = "SELECT * FROM customers ";
+        $select = "SELECT * FROM customers WHERE role = 0";
+
+        return $db->query($select);
+    }
+
+    function selectEmployee() {
+        global $db;
+
+        $select = "SELECT * FROM customers WHERE role = 1";
 
         return $db->query($select);
     }
@@ -29,21 +37,30 @@
         return $member['name_customer'];
     }
 
-    function insertCustomer($id_customer, $name_customer, $phone, $email, $address, $gender, $password){
+    function insertCustomer($id_customer, $name_customer, $phone, $email, $address, $gender, $password, $img_customer ,$role){
         global $db;
         
         $insert = "INSERT INTO customers(id_customer, name_customer, phone, email, address, gender, password, img_customer, role)
-        VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', 'user.svg', 0)";
+        VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', '$img_customer', $role)";
 
         $db->exec($insert);
 
         $_SESSION['id_customer'] = $id_customer;
         $_SESSION['name_customer'] = getName($id_customer);
-        $_SESSION['role'] = getRole($id_customer);
+        $_SESSION['role'] = $role;
 
         if(isset($_SESSION['id_customer'])) {
             header("Location: ../?successSignin");
         }
+    }
+
+    function insertCustomerAdmin($id_customer, $name_customer, $phone, $email, $address, $gender, $password, $img_customer ,$role){
+        global $db;
+        
+        $insert = "INSERT INTO customers(id_customer, name_customer, phone, email, address, gender, password, img_customer, role)
+        VALUES('$id_customer','$name_customer','$phone','$email','$address','$gender', '$password', '$img_customer', $role)";
+
+        $db->exec($insert);
     }
 
     function checkLogin($id_customer, $password) {
@@ -73,5 +90,13 @@
         unset($_SESSION['name_customer']);
         unset($_SESSION['role']);
         header('Location: ../');
+    }
+
+    function deleteCustomer($id_customer) {
+        global $db;
+
+        $delete = "DELETE FROM customers WHERE id_customer = '$id_customer'";
+
+        $db->exec($delete);
     }
 ?>
