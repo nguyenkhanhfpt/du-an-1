@@ -93,7 +93,7 @@
                 <?php foreach($comments as $comment) : $countComment++; ?>
                     <div class="mb-3 w-100 mx-auto p-3 card border-0 box-comment">
                         <div class="d-flex">
-                            <img src="<?=$URL_IMG ?>/<?=$comment['img_customer']?>" width="45px">
+                            <img src="<?=$URL_IMG ?>/imgCustomers/<?=$comment['img_customer']?>" width="45px">
                             <div class="pl-2">
                                 <p class="mb-1 font-weight-bold"><?=$comment['name_customer']?></p>
                                 <p class="small m-0"><?=$comment['date_comment']?></p>

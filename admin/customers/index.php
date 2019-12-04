@@ -28,7 +28,10 @@
     }
 
     else if(array_key_exists('editCustomer', $_REQUEST)) {
-        $view_name = 'viewEditCustomer.php';
+        $img_customer = strlen($_FILES['img_customer']['name']) ? save_file('img_customer', $DIR_IMG .'/imgCustomers') : $oldImg;
+        updateCustomerAdmin($id_customer, $name_customer, $address, $role, $img_customer);
+
+        header("Location: ../customers?viewEditCustomer&id_customer=" .$id_customer. '&message=Cập nhật người dùng thành công!');
     }
 
     else {

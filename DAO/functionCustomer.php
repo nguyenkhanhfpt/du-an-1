@@ -72,6 +72,17 @@
         $db->exec($insert);
     }
 
+    function updateCustomerAdmin($id_customer, $name_customer, $address, $role, $img_customer) {
+        global $db;
+
+        $update = "UPDATE customers
+                    SET name_customer = '$name_customer', address = '$address', role = $role, img_customer = '$img_customer'
+                    WHERE id_customer = '$id_customer'";
+        
+
+        $db->exec($update);
+    }
+
     function checkLogin($id_customer, $password) {
         global $db;
 

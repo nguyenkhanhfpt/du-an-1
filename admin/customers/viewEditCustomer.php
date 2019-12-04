@@ -1,3 +1,9 @@
+<?php if(strlen($message)) : ?>
+    <div class="alert alert-success">
+        <?=$message?>
+    </div>
+<?php endif ?>
+
 <div class="p-3 bg-white border-bottom d-flex justify-content-between">
     <div class="d-flex">
         <img src="<?= $URL_IMG ?>/imgCustomers/<?=$customer['img_customer']?>" class="rounded" height="70px" width="70px">
@@ -48,17 +54,22 @@
             <label for="img_customer">Ảnh người dùng</label>
             <input type="file" class="form-control-file" id="img_customer" name="img_customer">
             <input type="hidden" name="oldImg" value="<?=$customer['img_customer']?>">
+            <input type="hidden" name="id_customer" value="<?=$customer['id_customer']?>"> <!-- gửi id customer theo request -->
             <input type="hidden" name="editCustomer"> <!-- Để xác nhận khi submit form -->
         </div>
     </form>
-
 </div>
+
+<a href="<?=$URL_ADMIN?>/customers" class="btn btn-success mt-3">Danh sách người dùng</a>
 
 <script>
     let btnEditCustomer = document.getElementById('btnEditCustomer');
     let formEditCustomer = document.getElementById('formEditCustomer');
 
     btnEditCustomer.onclick = () => {
-        formEditCustomer.submit();
+        let check = confirm('Bạn có muốn cập nhật không!');
+        if(check) {
+            formEditCustomer.submit();
+        }
     }
 </script>
