@@ -249,6 +249,25 @@ footer .text p{
 }
 
 
+/* Bảng trong cart (giỏ hàng) */
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+.w-30{
+    width: 25%;
+}
+
+@media screen and (max-width: 770px) {
+    .w-30{
+        width: 100%;
+    }
+}
+
+
 
 
 

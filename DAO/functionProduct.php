@@ -71,7 +71,7 @@
 
     function priceAfterSale($percent, $price){
         $ratio = (100 - $percent) / 100;
-        return  number_format($price * $ratio);
+        return $price * $ratio;
     }
 
     function orderDefault() {

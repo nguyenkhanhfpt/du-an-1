@@ -27,7 +27,7 @@
                             <?php endif ?>
                         </div>
                         <div class="display-card">
-                            <a href="<?= $URL_SITE ?>?cart" class="shadow rounded">
+                            <a href="<?= $URL_SITE ?>/cart?addCartWithIcon&id_product=<?=$product['id_product']?>" class="shadow rounded">
                                 <img src="<?= $URL_IMG ?>/shopping-cart.svg" alt="" width="25px">
                             </a>
                         </div>

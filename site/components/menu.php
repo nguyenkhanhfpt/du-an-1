@@ -36,7 +36,7 @@
 
             <div class="col-5 col-md-1 pt-2 menu-top-end d-flex justify-content-end">
                 <div class="cart px-3 pt-1">
-                    <img src="<?=$URL_IMG?>/shopping-cart.svg" width="23px">
+                    <a href="<?=$URL_SITE?>/cart"><img src="<?=$URL_IMG?>/shopping-cart.svg" width="23px"></a>
                 </div>
                 <?php if(isset($_SESSION['id_customer'])): ?>
                     <div class="pt-1">
@@ -102,4 +102,5 @@
             $(".sub-menu-button").slideToggle("slow")
         });
     });
+
 </script>

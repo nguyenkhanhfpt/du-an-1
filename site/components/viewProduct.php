@@ -52,7 +52,7 @@
             </svg>
 
             <?php if ($viewProduct['sale'] > 0) : ?>
-                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= priceAfterSale($viewProduct['sale'], $viewProduct['price_product']) ?> đ <span class="old-price"><?= number_format($viewProduct['price_product']) ?> đ</span></h3>
+                <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= number_format(priceAfterSale($viewProduct['sale'], $viewProduct['price_product'])) ?> đ <span class="old-price"><?= number_format($viewProduct['price_product']) ?> đ</span></h3>
             <?php else : ?>
                 <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= number_format($viewProduct['price_product']) ?> đ</h3>
             <?php endif ?>
@@ -62,14 +62,18 @@
                 Vestibulum lacinia risus sed ligula malesuada volutpat
             </p>
             <span>Số lượng: </span>
-            <form action="">
+            <form action="./cart/" method="post">
                 <div class="form-group">
                     <div class="d-flex align-items-center">
                         <div class="w-20">
-                            <input type="number" value="1" class="form-control form-number" min="1">
+                            <input type="number" value="1" name="quantity_product" class="form-control form-number" min="1">
                         </div>
                         <div class="w-80">
-                            <a href="#" class="btn btn-success rounded-pill addCart">Thêm vào giỏ hàng</a>
+                            <input type="hidden" name="id_product" value="<?= $viewProduct['id_product'] ?>">
+                            <input type="hidden" name="img_product" value="<?= $viewProduct['img_product'] ?>">
+                            <input type="hidden" name="name_product" value="<?= $viewProduct['name_product'] ?>">
+                            <input type="hidden" name="price_product" value="<?= priceAfterSale($viewProduct['sale'], $viewProduct['price_product']) ?>">
+                            <input type="submit" name="addCart" class="btn btn-success rounded-pill addCart" value="Thêm vào giỏ hàng">
                         </div>
                     </div>
                 </div>
@@ -137,7 +141,7 @@
                         <?php endif ?>
                     </div>
                     <div class="display-card">
-                        <a href="<?= $URL_SITE ?>?cart" class="shadow rounded">
+                        <a href="<?= $URL_SITE ?>/cart?addCartWithIcon&id_product=<?=$product['id_product']?>" class="shadow rounded">
                             <img src="<?= $URL_IMG ?>/shopping-cart.svg" alt="" width="25px">
                         </a>
                     </div>
