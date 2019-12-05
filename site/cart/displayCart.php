@@ -2,9 +2,22 @@
     <div class="card border-0">
         <div class="card-body">
             <h4 class="mb-3">Giỏ hàng</h4>
+
+            <?php if (strlen($message)) : ?>
+                <div class="alert alert-success">
+                    <?= $message ?>
+                </div>
+            <?php endif ?>
+
+            <?php if (strlen($err)) : ?>
+                <div class="alert alert-danger">
+                    <?= $err ?>
+                </div>
+            <?php endif ?>
+
             <?php if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) : ?>
                 <p>Không có sản phẩm nào</p>
-                <a href="<?=$URL_SITE?>/products" class="btn btn-success">Tiếp tục mua hàng -></a>
+                <a href="<?= $URL_SITE ?>/products" class="btn btn-success">Tiếp tục mua hàng -></a>
             <?php else : ?>
                 <div class="row">
                     <div class="col-12">
@@ -19,16 +32,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <form action="index.php"  id="formQuantifyCart" method="post">
+                                <form action="index.php" id="formQuantifyCart" method="post">
                                     <?php foreach ($_SESSION['cart'] as $key => $product) : ?>
                                         <tr>
                                             <td scope="row"><img src="<?= $URL_IMG ?>/<?= $product['img_product'] ?>" class="rounded" height="50px" width="50px"></td>
                                             <td><?= $product['name_product'] ?></td>
                                             <td><?= number_format($product['price_product']) ?> đ</td>
                                             <td>
-                                                <div class='w-30'> 
+                                                <div class='w-30'>
                                                     <input type="hidden" name="updateCart">
-                                                    <input type="number" class="form-control" name="quantity_cart[<?=$key?>]" value='<?= $product['quantity_product'] ?>' min="1">
+                                                    <input type="number" class="form-control" name="quantity_cart[<?= $key ?>]" value='<?= $product['quantity_product'] ?>' min="1">
                                                 </div>
                                             </td>
                                             <td>
@@ -44,14 +57,14 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <a href="javascript:void(0);" id="updateCart" class="text-dark">Cập nhật</a> <br>
-                        <a href="<?=$URL_SITE?>/products" class="text-success">Tiếp tục mua hàng</a>
+                        <a href="<?= $URL_SITE ?>/products" class="text-success">Tiếp tục mua hàng</a>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="py-3 d-flex justify-content-between">
                             <p>Thành tiền: </p>
-                            <h4 class="text-danger font-weight-bold"><?=number_format(sumPrice());?> đ</h4>
+                            <h4 class="text-danger font-weight-bold"><?= number_format(sumPrice()); ?> đ</h4>
                         </div>
-                        <a href="" class="btn btn-success btn-block py-2">Tiến hành thanh toán</a>
+                        <a href="<?= $URL_SITE ?>/cart/index.php?buyProduct" class="btn btn-success btn-block py-2">Tiến hành thanh toán</a>
                     </div>
                 </div>
             <?php endif ?>
