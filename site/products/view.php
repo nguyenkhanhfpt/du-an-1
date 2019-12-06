@@ -2,11 +2,11 @@
 <div class="container">
     <div class="row mt-3 mb-3">
         <div class="col-12 col-md-3">
-            <form action="">
+            <form action="index.php" method="get">
                 <div class="form-group">
                     <div class="input-affix">
                         <i class="fas fa-search prefix-icon anticon anticon-search"></i>
-                        <input type="text" class="form-control py-2" placeholder="Tìm kiếm">
+                        <input type="text" name="name_product" class="form-control py-2" placeholder="Tìm kiếm">
                     </div>
                 </div>
             </form>
@@ -71,7 +71,8 @@
         </div>
         <div class="col-12 col-md-9 order-md-2">
             <div class="row">
-                <?php foreach ($products as $product) : ?>
+                <?php $count = 0; ?>
+                <?php foreach ($products as $product) : $count++; ?>
                     <div class="col-6 col-md-4">
                         <div class="border product mb-3">
                             <a href="<?= $URL_SITE ?>?viewProduct&id_product=<?= $product['id_product'] ?>">
@@ -101,6 +102,7 @@
                         </div>
                     </div>
                 <?php endforeach ?>
+                <?= $count == 0 ? " Không có sản phẩm nào" : ''; ?>
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@
 
         $select = "SELECT B.*, C.name_customer, C.img_customer
                     FROM bill AS B INNER JOIN customers AS C ON B.id_customer_bill = C.id_customer
-                    WHERE B.status = 0";
+                    WHERE B.status = 0 ORDER BY date_bill DESC";
 
         return $db->query($select);
     }
@@ -31,7 +31,7 @@
 
         $select = "SELECT B.*, C.name_customer, C.img_customer
                     FROM bill AS B INNER JOIN customers AS C ON B.id_customer_bill = C.id_customer
-                    WHERE B.status = 1";
+                    WHERE B.status = 1 ORDER BY date_bill DESC";
 
         return $db->query($select);
     }

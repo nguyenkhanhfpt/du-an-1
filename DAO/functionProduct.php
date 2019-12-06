@@ -34,6 +34,15 @@
         return $db->query($select);
     }
 
+    function searchProdcuct($name_product) {
+        global $db;
+
+        $select = "SELECT * FROM products WHERE name_product LIKE '%$name_product%' ";
+
+
+        return $db->query($select);
+    }
+
     function insertProduct($name_product, $price_product, $sale, $kind_product, $img_product, $description){
         global $db;
         
