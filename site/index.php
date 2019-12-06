@@ -56,8 +56,13 @@
             insertComment($title_comment, $content_comment, $review, $id_product_comment, $id_customer_comment, $img_comment, $date_comment);
 
             header('Location: index.php?viewProduct&id_product=' .$id_product);
-        }
-        
+        } 
+    }
+
+    else if(array_key_exists('deleteComment', $_REQUEST)) {
+        deleteComment($id_comment);
+
+        header('Location: index.php?viewProduct&id_product=' .$id_product);
     }
 
     else if(array_key_exists('uploadImg', $_REQUEST)) {

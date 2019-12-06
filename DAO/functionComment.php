@@ -19,7 +19,16 @@
                 ON CM.id_customer_comment = CU.id_customer
                 WHERE CM.id_product_comment = $id_product";
 
+
         return $db->query($select);
+    }
+
+    function deleteComment($id_comment) {
+        global $db;
+
+        $delete = "DELETE FROM comments WHERE id_comment = $id_comment";
+
+        $db->exec($delete);
     }
 
 ?>

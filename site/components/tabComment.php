@@ -103,7 +103,12 @@
                         <h6 class="font-weight-bold" style="font-size: 18px;"><?=$comment['title_comment']?></h6>
                         <p><?=$comment['content_comment']?></p>
                         <?php if(strlen($comment['img_comment'])) : ?>
-                            <img src="<?=$URL_IMG?>/imgComment/<?=$comment['img_comment']?>" class="" width="100%" height="auto">
+                            <div class="" style="max-height: 800px;overflow: hidden;">
+                                <img src="<?=$URL_IMG?>/imgComment/<?=$comment['img_comment']?>" class="" width="100%" height="auto">
+                            </div>
+                        <?php endif ?>
+                        <?php if($comment['id_customer_comment'] == $_SESSION['id_customer']) : ?>
+                            <a href="index.php?deleteComment&id_comment=<?=$comment['id_comment']?>&id_product=<?=$viewProduct['id_product']?>" class="mt-2 text-danger text-decoration-none" onclick="return confirm('Bạn có muốn xóa bình luận!')">Xóa bình luận</a>
                         <?php endif ?>
                     </div>
                 <?php endforeach ?>
