@@ -35,8 +35,9 @@
             </div>
 
             <div class="col-5 col-md-1 pt-2 menu-top-end d-flex justify-content-end">
-                <div class="cart px-3 pt-1">
+                <div class="cart px-5 pt-1 position-relative">
                     <a href="<?=$URL_SITE?>/cart"><img src="<?=$URL_IMG?>/shopping-cart.svg" width="23px"></a>
+                    <span class="badge badge-primary badge-pill bg-transparent text-dark border position-absolute" style="top:-5px"><?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                 </div>
                 <?php if(isset($_SESSION['id_customer'])): ?>
                     <div class="pt-1">

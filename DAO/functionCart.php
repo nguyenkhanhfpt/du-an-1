@@ -36,7 +36,7 @@
             'img_product' => $product['img_product'],
             'id_product' => $product['id_product'],
             'quantity_product' => 1,
-            'price_product' => $product['price_product']
+            'price_product' => ((100 - $product['sale']) / 100 ) * $product['price_product']
         );
 
         $_SESSION['cart'][$id_product] = $item;

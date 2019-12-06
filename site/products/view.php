@@ -60,7 +60,7 @@
                         </a>
                         <div class="pl-4 pl-md-2">
                             <p class="mb-2 top-product "><a href="<?= $URL_SITE ?>?viewProduct&id_product=<?= $product['id_product'] ?>" class="text-secondary text-decoration-none" ><?= $product['name_product']?></a></p>
-                            <strong><?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</strong>
+                            <strong><?= number_format(priceAfterSale($product['sale'], $product['price_product'])) ?> đ</strong>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -82,7 +82,7 @@
                                     <a href="<?= $URL_SITE ?>?viewProduct&id_product=<?= $product['id_product'] ?>" class="name text-decoration-none"><?= $product['name_product'] ?></a>
                                 </div>
                                 <?php if ($product['sale'] > 0) : ?>
-                                    <p class="price mb-0"><span class="d-none d-sm-inline-block"><?= number_format($product['price_product']) ?> đ</span> <?= priceAfterSale($product['sale'], $product['price_product']) ?> đ</p>
+                                    <p class="price mb-0"><span class="d-none d-sm-inline-block"><?= number_format($product['price_product']) ?> đ</span> <?= number_format(priceAfterSale($product['sale'], $product['price_product'])) ?> đ</p>
                                 <?php else : ?>
                                     <p class="price mb-0"><?= number_format($product['price_product']) ?> đ</p>
                                 <?php endif ?>
