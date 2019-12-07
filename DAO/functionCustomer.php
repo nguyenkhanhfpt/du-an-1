@@ -46,7 +46,7 @@
         return $member['name_customer'];
     }
 
-    function insertCustomer($id_customer, $name_customer, $phone, $email, $address, $gender, $password, $img_customer ,$role){
+    function insertCustomer($id_customer, $name_customer, $phone, $email, $address, $gender, $password, $img_customer ,$role, $saveAccount){
         global $db;
         
         $insert = "INSERT INTO customers(id_customer, name_customer, phone, email, address, gender, password, img_customer, role)
@@ -57,6 +57,10 @@
         $_SESSION['id_customer'] = $id_customer;
         $_SESSION['name_customer'] = getName($id_customer);
         $_SESSION['role'] = $role;
+
+        if(isset($saveAccount)){
+            setcookie('id_customer', $id_customer, time() + 3600 * 24, "/");
+        }
 
         if(isset($_SESSION['id_customer'])) {
             header("Location: ../?successSignin");
@@ -83,7 +87,7 @@
         $db->exec($update);
     }
 
-    function checkLogin($id_customer, $password) {
+    function checkLogin($id_customer, $password, $saveAccount) {
         global $db;
 
         $select = "SELECT * FROM customers WHERE id_customer = '$id_customer' AND password = '$password' ";
@@ -95,6 +99,10 @@
             $_SESSION['id_customer'] = $id_customer;
             $_SESSION['name_customer'] = getName($id_customer);
             $_SESSION['role'] = getRole($id_customer);
+
+            if(isset($saveAccount)){
+                setcookie('id_customer', $id_customer, time() + 3600 * 24, "/");
+            }
         }
 
         if(empty($_SESSION['id_customer'])) {
@@ -109,6 +117,8 @@
         unset($_SESSION['id_customer']);
         unset($_SESSION['name_customer']);
         unset($_SESSION['role']);
+        setcookie("id_customer", "", time() - 60, "/");
+
         header('Location: ../');
     }
 

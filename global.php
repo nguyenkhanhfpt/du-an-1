@@ -1,4 +1,6 @@
 <?php
+    require 'DAO/functionCustomer.php';
+
     $URL = "/du-an-1";
     $URL_SITE = $URL .'/site';
     $URL_ADMIN = $URL . '/admin';
@@ -16,5 +18,15 @@
         move_uploaded_file($file_uploaded['tmp_name'], $target_path);
         return $name_img;
     }
+
+    function checkCookie() {
+        if(isset($_COOKIE['id_customer'])) {
+            $_SESSION['id_customer'] = $_COOKIE['id_customer'];
+            $_SESSION['name_customer'] = getName($_COOKIE['id_customer']);
+            $_SESSION['role'] = getRole($_COOKIE['id_customer']);
+        }
+    }
+
+    checkCookie();
 
 ?>

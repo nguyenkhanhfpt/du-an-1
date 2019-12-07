@@ -107,8 +107,10 @@
                                 <img src="<?= $URL_IMG ?>/imgComment/<?= $comment['img_comment'] ?>" class="" width="100%" height="auto">
                             </div>
                         <?php endif ?>
-                        <?php if ($comment['id_customer_comment'] == $_SESSION['id_customer']) : ?>
-                            <a href="index.php?deleteComment&id_comment=<?= $comment['id_comment'] ?>&id_product=<?= $viewProduct['id_product'] ?>" class="mt-2 text-danger text-decoration-none" onclick="return confirm('Bạn có muốn xóa bình luận!')">Xóa bình luận</a>
+                        <?php if(isset($_SESSION['id_customer'])) : ?>
+                            <?php if ($comment['id_customer_comment'] == $_SESSION['id_customer']) : ?>
+                                <a href="index.php?deleteComment&id_comment=<?= $comment['id_comment'] ?>&id_product=<?= $viewProduct['id_product'] ?>" class="mt-2 text-danger text-decoration-none" onclick="return confirm('Bạn có muốn xóa bình luận!')">Xóa bình luận</a>
+                            <?php endif ?>
                         <?php endif ?>
                     </div>
                 <?php endforeach ?>

@@ -1,7 +1,6 @@
 <?php
     session_start();
-    require '../../global.php';
-    require '../../DAO/functionCustomer.php';
+    require '../../global.php'; // file global đã được require function của customers
 
     $message = '';
 

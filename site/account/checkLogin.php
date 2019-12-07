@@ -4,7 +4,7 @@
     extract($_REQUEST);
 
     if(isset($_POST['login'])) {
-        checkLogin($id_customer, $password);
+        checkLogin($id_customer, $password, $saveAccount);
     }
 
     else if(array_key_exists('logout', $_REQUEST)) {

@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="form-group form-check custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="save-info">
+            <input type="checkbox" class="custom-control-input" name="saveAccount" id="save-info">
             <label class="custom-control-label" for="save-info">Lưu mật khẩu</label>
         </div>
 
