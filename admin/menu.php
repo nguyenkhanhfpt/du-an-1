@@ -6,6 +6,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item "><a href="<?= $URL_ADMIN ?>"><span><img src="<?= $URL_IMG ?>/car.svg" width="23px"></span>
                     Tổng quan</a></li>
+                    <li class="list-group-item "><a href="<?= $URL_ADMIN ?>/kind_products"><span><img src="<?= $URL_IMG ?>/kind.svg" width="23px"></span>Loại hàng</a></li>
             <li class="list-group-item "><a href="<?= $URL_ADMIN ?>/products"><span><img src="<?= $URL_IMG ?>/vegetables.svg" width="23px"></span> Sản phẩm</a></li>
             <li class="list-group-item "><a href="<?= $URL_ADMIN ?>/customers"><span><img src="<?= $URL_IMG ?>/customer.svg" width="23px"></span> Khách hàng</a></li>
             <li class="list-group-item "><a href="<?= $URL_ADMIN ?>/bills"><span><img src="<?= $URL_IMG ?>/bill.svg" width="23px"></span>Hóa đơn</a></li>
