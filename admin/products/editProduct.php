@@ -39,10 +39,9 @@
                     <div class="col">
                         <label for="kind_product">Loại sản phẩm</label>
                         <select class="form-control" id="kind_product" name="kind_product" value="<?=$product['kind_product']?>">
-                            <option value="Món chính">Món chính</option>
-                            <option value="Đồ ăn vặt">Đồ ăn vặt</option>
-                            <option value="Nước uống">Nước uống</option>
-                            <option value="Trà sữa">Trà sữa</option>
+                            <?php foreach($kindProducts as $kind) : ?>
+                                <option value="<?=$kind['id_kind']?>"><?=$kind['name_kind']?></option>
+                            <?php endforeach ?>
                         </select>
                     </div>
                     <div class="col">

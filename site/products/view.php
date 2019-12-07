@@ -32,22 +32,12 @@
         <div class="col-12 col-md-3 order-2 order-md-1">
             <p class="categories">DANH MỤC SẢN PHẨM</p>
             <ul class="list-group">
+                <?php foreach($kindProducts as $kind) : ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center mb-1 border-0 pl-0">
-                    <a href="">Món chính</a>
-                    <span class="badge badge-primary badge-pill bg-transparent text-dark border">14</span>
+                    <a href="index.php?filter&kind_product=<?=$kind['kind_product']?>"><?=$kind['name_kind']?></a>
+                    <span class="badge badge-primary badge-pill bg-transparent text-dark border"><?=$kind['COUNT(id_product)']?></span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center mb-1 border-0 pl-0">
-                    <a href="">Trà sữa</a>
-                    <span class="badge badge-primary badge-pill bg-transparent text-dark border">2</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center mb-1 border-0 pl-0">
-                    <a href="">Đồ ăn nhanh</a>
-                    <span class="badge badge-primary badge-pill bg-transparent text-dark border">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center mb-1 border-0 pl-0">
-                    <a href="">Đồ uống</a>
-                    <span class="badge badge-primary badge-pill bg-transparent text-dark border">1</span>
-                </li>
+                <?php endforeach ?>
             </ul>
 
             <!-- Top rate -->

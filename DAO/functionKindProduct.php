@@ -29,6 +29,16 @@
 
     }
 
+    function selectNumberKindInProduct(){
+        global $db;
+
+        $select = "SELECT K.name_kind, P.kind_product, COUNT(id_product)  FROM kind_products AS K
+                    INNER JOIN products AS P ON K.id_kind = P.kind_product
+                    GROUP BY P.kind_product";
+
+        return $db->query($select);
+    }
+
     function  deleteKindProduct($id_kind){
         global $db;
         $delete = "DELETE FROM kind_products WHERE id_kind = $id_kind";

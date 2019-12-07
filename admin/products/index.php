@@ -2,9 +2,13 @@
     session_start();
     require '../../global.php';
     require '../../DAO/functionProduct.php';
+    require '../../DAO/functionKindProduct.php';
 
     $message = '';
     extract($_REQUEST);
+
+    // Select tất cả các loại sản phẩm
+    $kindProducts = selectKindProduct();
 
     if(array_key_exists('viewAddProduct', $_REQUEST)) {
         $view_name = 'viewAddProduct.php';

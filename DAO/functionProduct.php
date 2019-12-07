@@ -43,6 +43,14 @@
         return $db->query($select);
     }
 
+    function searchProdcuctWithKind($kind_product) {
+        global $db;
+
+        $select = "SELECT * FROM products WHERE kind_product = $kind_product";
+
+        return $db->query($select);
+    }
+
     function insertProduct($name_product, $price_product, $sale, $kind_product, $img_product, $description){
         global $db;
         
