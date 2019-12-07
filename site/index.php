@@ -9,6 +9,7 @@
 
     $message = '';
     $err = '';
+    $errUpload = '';
 
     extract($_REQUEST);
 
@@ -49,10 +50,12 @@
             header('Location: index.php?viewProduct&err=Phải đăng nhập để bình luận!&id_product=' .$id_product);
         }
         else{
+            // lấy giá trị từ request để gán vào các biền đưa vào tham số cho hàm 
             $id_product_comment = $id_product;
             $id_customer_comment = $_SESSION['id_customer'];
             $img_comment = strlen($_FILES['img_comment']['name']) > 0 ? save_file("img_comment", $DIR_IMG .'/imgComment') : '';
             $date_comment = date("Y-m-d H:i:s");
+
             insertComment($title_comment, $content_comment, $review, $id_product_comment, $id_customer_comment, $img_comment, $date_comment);
 
             header('Location: index.php?viewProduct&id_product=' .$id_product);
@@ -66,8 +69,19 @@
     }
 
     else if(array_key_exists('uploadImg', $_REQUEST)) {
-        $img_upload = save_file("img_upload", $DIR_IMG .'/imgUpload');
-        insertImg($img_upload, $id_product);
+        if(!isset($_SESSION['id_customer'])) {
+            header('Location: index.php?viewProduct&errUpload=Phải đăng nhập để upload ảnh!&id_product=' .$id_product);
+        }
+        else{
+            $img_upload = save_file("img_upload", $DIR_IMG .'/imgUpload');
+            insertImg($img_upload, $id_product, $id_customer);
+            header('Location: index.php?viewProduct&id_product=' .$id_product);
+        } 
+    }
+
+    else if(array_key_exists('deleteImgUpload', $_REQUEST)) {
+        deleteImgUpload($id_img);
+
         header('Location: index.php?viewProduct&id_product=' .$id_product);
     }
     

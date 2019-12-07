@@ -90,50 +90,59 @@
             <div class="comment p-3">
                 <?php $countComment = 0; ?>
 
-                <?php foreach($comments as $comment) : $countComment++; ?>
+                <?php foreach ($comments as $comment) : $countComment++; ?>
                     <div class="mb-3 w-100 mx-auto p-3 card border-0 box-comment">
                         <div class="d-flex">
-                            <img src="<?=$URL_IMG ?>/imgCustomers/<?=$comment['img_customer']?>" width="45px">
+                            <img src="<?= $URL_IMG ?>/imgCustomers/<?= $comment['img_customer'] ?>" width="45px">
                             <div class="pl-2">
-                                <p class="mb-1 font-weight-bold"><?=$comment['name_customer']?></p>
-                                <p class="small m-0"><?=$comment['date_comment']?></p>
+                                <p class="mb-1 font-weight-bold"><?= $comment['name_customer'] ?></p>
+                                <p class="small m-0"><?= $comment['date_comment'] ?></p>
                             </div>
                         </div>
                         <hr>
-                        <h6 class="font-weight-bold" style="font-size: 18px;"><?=$comment['title_comment']?></h6>
-                        <p><?=$comment['content_comment']?></p>
-                        <?php if(strlen($comment['img_comment'])) : ?>
+                        <h6 class="font-weight-bold" style="font-size: 18px;"><?= $comment['title_comment'] ?></h6>
+                        <p><?= $comment['content_comment'] ?></p>
+                        <?php if (strlen($comment['img_comment'])) : ?>
                             <div class="" style="max-height: 800px;overflow: hidden;">
-                                <img src="<?=$URL_IMG?>/imgComment/<?=$comment['img_comment']?>" class="" width="100%" height="auto">
+                                <img src="<?= $URL_IMG ?>/imgComment/<?= $comment['img_comment'] ?>" class="" width="100%" height="auto">
                             </div>
                         <?php endif ?>
-                        <?php if($comment['id_customer_comment'] == $_SESSION['id_customer']) : ?>
-                            <a href="index.php?deleteComment&id_comment=<?=$comment['id_comment']?>&id_product=<?=$viewProduct['id_product']?>" class="mt-2 text-danger text-decoration-none" onclick="return confirm('Bạn có muốn xóa bình luận!')">Xóa bình luận</a>
+                        <?php if ($comment['id_customer_comment'] == $_SESSION['id_customer']) : ?>
+                            <a href="index.php?deleteComment&id_comment=<?= $comment['id_comment'] ?>&id_product=<?= $viewProduct['id_product'] ?>" class="mt-2 text-danger text-decoration-none" onclick="return confirm('Bạn có muốn xóa bình luận!')">Xóa bình luận</a>
                         <?php endif ?>
                     </div>
                 <?php endforeach ?>
-                <?php if($countComment == 0){
-                        echo "Không có bình luận nào!";
-                    }
+                <?php if ($countComment == 0) {
+                    echo "Không có bình luận nào!";
+                }
                 ?>
-            </div>    
+            </div>
         </div>
 
         <!-- Phần xem ảnh -->
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <?php if (strlen($errUpload)) : ?>
+                <div class="alert alert-danger">
+                    <?= $errUpload ?>
+                </div>
+            <?php endif ?>
             <div class="row">
-                <?php foreach($allImgUpload as $img): ?>
+                <?php foreach ($allImgUpload as $img) : ?>
                     <div class="col-4 col-md-2 mb-3 images-img">
                         <img src="<?= $URL_IMG ?>/imgUpload/<?=$img['img_upload']?>" class="rounded shadow-sm" width="100%">
+                        <?php if ($img['id_customer'] == $_SESSION['id_customer']) : ?>
+                            <span class="badge badge-primary badge-pill bg-white text-dark border position-absolute" style="top:-5px; right: 10px;"><a href="index.php?deleteImgUpload&id_img=<?=$img['id_img']?>&id_product=<?= $viewProduct['id_product']?>" class="text-danger text-decoration-none">X</a></span>
+                        <?php endif ?>
                     </div>
                 <?php endforeach ?>
                 <div class="col-4 col-md-2 mb-3">
                     <form action="index.php" method="POST" enctype="multipart/form-data" class="h-100">
                         <input type="hidden" name="id_product" value="<?= $viewProduct['id_product'] ?>">
+                        <input type="hidden" name="id_customer" value="<?= $_SESSION['id_customer'] ?>">
                         <input type="file" name="img_upload" id="add-img2" class="d-none">
                         <input type="button" id="btn-add-img2" class="btn btn-secondary w-100 btn-uploadImg" value="Đăng ảnh">
-                        <input type="submit" class="d-none" id="form_upload_img" name="uploadImg" >
-                    </form>   
+                        <input type="submit" class="d-none" id="form_upload_img" name="uploadImg">
+                    </form>
                 </div>
             </div>
         </div>
@@ -158,7 +167,7 @@
 
     add_img.onchange = () => {
         let check = confirm('Bạn có muốn đăng ảnh lên!');
-        if(check == true) {
+        if (check == true) {
             form_upload_img.click();
         }
     }
