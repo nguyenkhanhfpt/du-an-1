@@ -89,14 +89,39 @@
 </script>
 
 
+<p id="nameKind" class="d-none">
+    <?php foreach($nameKind as $name)
+        echo $name['name_kind'] .',';
+    ?>
+</p>
+
+<p id="numberKind" class="d-none">
+    <?php foreach($numberKind as $number)
+        echo $number['COUNT(id_product)'] .',';
+    ?>
+</p>
 
 
 
-<script>new Chart(document.getElementById("chartjs-4"), 
+<script>
+    // lấy gia giá trị tên của loại hàng
+    var name = document.getElementById('nameKind').textContent;
+    var arrName = name.split(',');
+
+    arrName.pop();
+
+    // Lấy số lượng của loại
+    var numberKind = document.getElementById('numberKind').textContent;
+    var arrNumberKind = numberKind.split(',');
+
+    arrNumberKind.pop();
+
+
+    new Chart(document.getElementById("chartjs-4"), 
     { 
         "type": "doughnut", 
-        "data": { "labels": ["Món ăn", "Đồ uống", "Khác"], 
-            "datasets": [{ "label": "My First Dataset", "data": [300, 50, 100], 
+        "data": { "labels": arrName, 
+            "datasets": [{ "label": "My First Dataset", "data": arrNumberKind, 
             "backgroundColor": ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)" , "rgb(255, 205, 86)"] }] 
             } 
     });
