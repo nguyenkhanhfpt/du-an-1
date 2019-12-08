@@ -5,6 +5,7 @@
     require '../DAO/functionProduct.php';
     require '../DAO/functionComment.php';
     require '../DAO/functionUploadImg.php';
+    
     $products = selectProducts();
 
     $message = '';

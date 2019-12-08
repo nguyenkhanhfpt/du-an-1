@@ -19,6 +19,14 @@
         return $db->query($select);
     }
 
+    function selectImgsUpload() {
+        global $db;
+
+        $select = "SELECT * FROM upload_img";
+
+        return $db->query($select);
+    }
+
     function deleteImgUpload($id_img) {
         global $db;
 
