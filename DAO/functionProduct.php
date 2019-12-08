@@ -26,6 +26,14 @@
         return $db->query($select);
     }
 
+    function selectProductsLimitForHome(){
+        global $db;
+
+        $select = "SELECT * FROM products ORDER BY id_product DESC LIMIT 8";
+
+        return $db->query($select);
+    }
+
     function selectTopView() {
         global $db;
 

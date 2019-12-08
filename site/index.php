@@ -6,7 +6,7 @@
     require '../DAO/functionComment.php';
     require '../DAO/functionUploadImg.php';
     
-    $products = selectProducts();
+    $products = selectProductsLimitForHome();
 
     $message = '';
     $err = '';
