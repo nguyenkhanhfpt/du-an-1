@@ -49,7 +49,7 @@
                             <div class="name-over text-center pb-2 font-weight-bold">
                                 <?=$_SESSION['name_customer']?>
                             </div>
-                            <a class="dropdown-item" href="#"><img src="<?=$URL_IMG?>/account.svg" width="18px"> <span>Thông
+                            <a class="dropdown-item" href="<?=$URL_SITE?>/account"><img src="<?=$URL_IMG?>/account.svg" width="18px"> <span>Thông
                                     tin</span></a>
                             <?php if($_SESSION['role'] > 0) : ?>
                                 <a class="dropdown-item" href="<?=$URL_ADMIN?>"><img src="<?=$URL_IMG?>/settings.svg" width="18px">
