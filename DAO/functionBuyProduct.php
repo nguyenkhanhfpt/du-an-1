@@ -74,7 +74,8 @@
         $select = "SELECT D.*, P.*, B.date_bill
                     FROM detail_bill AS D INNER JOIN products AS P ON D.id_product_bill = P.id_product
                     INNER JOIN bill AS B ON D.id_bill = B.id_bill 
-                    WHERE B.id_customer_bill = '$id_customer_bill'";
+                    WHERE B.id_customer_bill = '$id_customer_bill'
+                    ORDER BY B.date_bill DESC";
 
         return $db->query($select);
     }
