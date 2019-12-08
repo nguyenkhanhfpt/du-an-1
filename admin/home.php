@@ -12,29 +12,44 @@
     </div>
 </div>
 
+<!-- Dùng thẻ p để lấy giá trị lặp được từ CSDL -->
+<p id="num" class="d-none">
+    <?php
+        while($qty = $numbers->fetch()) {
+            echo $qty['SUM(D.quantity)'] ."," ;
+        }    
+    ?>
+</p>
 
-
+<p id="date" class="d-none">
+    <?php
+        while($qty = $dates->fetch()) {
+            $dt = strtotime($qty['date_bill']);
+            echo date('Y-m-d' ,$dt) ."," ;
+        }    
+    ?>
+</p>
 
 <script>
+    // lấy gia giá trị số
+    var number = document.getElementById('num').textContent;
+    var arrNumber = number.split(',');
+
+    // lấy ra giá trị ngày 
+    var dates = document.getElementById('date').textContent;
+    var arrDate = dates.split(',');
+
     var DAYS = ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật'];
     var config = {
         type: 'line',
         data: {
-            labels: ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật'],
+            labels: arrDate,
             datasets: [ {
                 label: 'Số lượng bán',
                 fill: false,
                 backgroundColor: window.chartColors.blue,
                 borderColor: window.chartColors.blue,
-                data: [
-                    0,
-                    10,
-                    18,
-                    80,
-                    77,
-                    22,
-                    60
-                ],
+                data: arrNumber,
             }]
         },
         options: {

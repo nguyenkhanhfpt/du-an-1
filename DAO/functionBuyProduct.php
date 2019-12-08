@@ -104,4 +104,16 @@
         $db->exec($update);
     }
 
+    // Select để thống kê mua bán
+    function statisticalBuy() {
+        global $db;
+
+        $select = "SELECT B.*, D.*, SUM(D.quantity)
+                    FROM bill AS B INNER JOIN detail_bill AS D ON B.id_bill = D.id_bill
+                    WHERE B.status = 1
+                    GROUP BY DATE(date_bill)";
+
+        return $db->query($select);
+    }
+
 ?>
