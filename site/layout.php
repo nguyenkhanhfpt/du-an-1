@@ -25,6 +25,11 @@
         });
     </script>
 
+    <!-- Link slide show img -->
+    <link href='<?= $URL_CSS ?>/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="<?=$URL_JS?>/simple-lightbox.js"></script>
+
+    <!-- Link css bổ xung  -->
     <link rel="stylesheet" href="<?= $URL_CSS ?>/index.css">
     <link rel="stylesheet" href="<?= $URL_CSS ?>/viewProduct.css">
     <link rel="stylesheet" href="<?= $URL_CSS ?>/product.css">

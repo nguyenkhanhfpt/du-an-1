@@ -14,7 +14,7 @@
                             <a class="nav-link" href="<?=$URL_SITE?>/products">ĐỒ ĂN & ĐỒ UỐNG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CỘNG ĐỒNG</a>
+                            <a class="nav-link" href="<?=$URL_SITE?>/viewPublic">CỘNG ĐỒNG</a>
                         </li>
                         <?php if(!isset($_SESSION['id_customer'])) : ?>
                             <li class="nav-item dropdown">
@@ -73,7 +73,7 @@
                                 <a href="<?=$URL_SITE?>/products">Sản phẩm</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="">Cộng đồng</a>
+                                <a href="<?=$URL_SITE?>/viewPublic">Cộng đồng</a>
                             </li>
                             <?php if(!isset($_SESSION['id_customer'])) : ?>
                                 <li class="list-group-item">
