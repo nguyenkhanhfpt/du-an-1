@@ -2,18 +2,18 @@
     <div class="row mt-5" style="min-height: 400px">
         <div class="col-12 col-md-3">
             <div class="d-flex">
-                <img src="<?= $URL_IMG ?>/banhxeo.jpg" class="rounded-circle" width="65px" height="65px">
+                <img src="<?= $URL_IMG ?>/imgCustomers/<?= $customer['img_customer'] ?>" class="rounded-circle" width="65px" height="65px">
                 <div class="ml-2">
                     <p class="mb-1">Thông tin tài khoản</p>
-                    <h6 style="font-size: 18px" class="font-weight-bold">Nguyễn Khánh</h6>
+                    <h6 style="font-size: 18px" class="font-weight-bold"><?= $_SESSION['name_customer'] ?></h6>
                 </div>
             </div>
 
             <!-- menu boostrap tab -->
             <div class="nav flex-column nav-pills mt-3 mb-4" id="account" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-home" aria-selected="true" style="font-size: 17px;">Thông tin tài khoản</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-profile" aria-selected="false" style="font-size: 17px;">Thay đổi mật khẩu</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-buy" role="tab" aria-controls="v-pills-messages" aria-selected="false" style="font-size: 17px;">Lịch sử mua hàng</a>
+                <a class="nav-link" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-password" aria-selected="false" style="font-size: 17px;">Thay đổi mật khẩu</a>
+                <a class="nav-link" id="v-pills-buy-tab" data-toggle="pill" href="#v-pills-buy" role="tab" aria-controls="v-pills-buy" aria-selected="false" style="font-size: 17px;">Lịch sử mua hàng</a>
             </div>
         </div>
         <div class="col-12 col-md-9">
@@ -23,34 +23,35 @@
                 <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
                     <h5>Thông tin tài khoản</h5>
                     <div class="border bg-white rounded  p-3">
-                        <form>
+                        <form action="index.php" method="POST" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Họ tên </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="name_customer" id="name" value="Nguyễn Khánh">
+                                    <input type="text" class="form-control" name="name_customer" id="name" value="<?= $_SESSION['name_customer'] ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="phone" class="col-sm-2 col-form-label">Số điện thoại</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="phone" value="0932838783" readonly>
+                                    <input type="text" class="form-control" id="phone" value="<?= $customer['phone'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="email" value="khanh26122000@gmail.com" readonly>
+                                    <input type="text" class="form-control" id="email" value="<?= $customer['email'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="address" class="col-sm-2 col-form-label">Địa chỉ</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="address" name="address" value="Liên Chiểu, Đà Nẵng">
+                                    <input type="text" class="form-control" id="address" name="address" value="<?= $customer['address'] ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="img" class="col-sm-2 col-form-label">Thay đổi ảnh</label>
                                 <div class="col-sm-10">
+                                    <input type="hidden" name="oldImg" value="<?= $customer['img_customer'] ?>">
                                     <input type="file" name="img_customer" class="form-control-file" id="img">
                                 </div>
                             </div>
@@ -65,43 +66,52 @@
                 </div>
 
                 <!-- Phần thay đổi mật khẩu -->
-                <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
                     <h5>Thay đổi mật khẩu</h5>
                     <div class="border bg-white rounded  p-3">
-                        <form>
+
+                        <?php if (!empty($err)) : ?>
+                            <div class="alert alert-danger"><?= $err ?></div>
+                        <?php endif ?>
+
+                        <?php if (!empty($message)) : ?>
+                            <div class="alert alert-success"><?= $message ?></div>
+                        <?php endif ?>
+
+                        <form action="index.php" method="POST" onsubmit="return checkPass()">
                             <div class="form-group row">
                                 <label for="oldPass" class="col-sm-2 col-form-label">Mật khẩu cũ</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="oldPass" name="oldPass" placeholder="Old password">
+                                    <input type="password" class="form-control" id="oldPass" name="password" placeholder="Old password" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="newPass" class="col-sm-2 col-form-label">Mật khẩu mới</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="newPass" placeholder="Password must be over 6 characters">
+                                    <input type="password" class="form-control" name="newPassword" id="newPass" placeholder="Password must be over 6 characters" required pattern=".{6,}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="email" class="col-sm-2 col-form-label">Nhập lại mật khẩu</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="email" placeholder="Enter password again">
+                            <div class=" form-group row">
+                                    <label for="newPassAgain" class="col-sm-2 col-form-label">Nhập lại mật khẩu</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="newPassAgain" placeholder="Enter password again" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-10">
-                                    <input type="submit" name="changePassword" class="btn btn-success" value="Cập nhật">
+                                <div class="form-group row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10">
+                                        <input type="submit" name="changePassword" class="btn btn-success" value="Cập nhật">
+                                    </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- Phần lịch sử mua hàng -->
-                <div class="tab-pane fade" id="v-pills-buy" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <div class="tab-pane fade" id="v-pills-buy" role="tabpanel" aria-labelledby="v-pills-buy-tab">
                     <h5>Lịch sử mua hàng</h5>
-                    <div class="border rounded p-3">
-                        <table class="table table-hover">
+                    <div>
+                        <table class="table border table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">Sản phẩm</th>
@@ -111,47 +121,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td scope="row"><img src="/du-an-1/images/trasua.jpg" class="rounded" height="50px" width="50px"> Trà sữa đậu đỏ</td>
-                                    <td>20,000 đ</td>
-                                    <td>6</td>
-                                    <td>2019-12-08 15:38:03</td>
-                                </tr>
+                                <?php foreach($products as $product): ?>
+                                    <tr>
+                                        <td scope="row"><img src="<?=$URL_IMG?>/<?=$product['img_product']?>" class="rounded" height="50px" width="50px"> <?=$product['name_product']?></td>
+                                        <td><?=$product['amount']?> đ</td>
+                                        <td><?=$product['quantity']?></td>
+                                        <td><?=$product['date_bill']?></td>
+                                    </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 </div>
+
+
+<script>
+    function checkPass() {
+        let newPass = document.getElementById('newPass').value;
+        let newPassAgain = document.getElementById('newPassAgain').value;
+
+        if (newPass == newPassAgain) {
+            return true;
+        } else {
+            alert('Mật khẩu xác nhận không khớp!');
+            return false;
+        }
+    }
+</script>

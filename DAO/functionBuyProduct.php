@@ -68,6 +68,17 @@
         return $db->query($select);
     }
 
+    function selectProductsBuyByCustomer($id_customer_bill) {
+        global $db;
+
+        $select = "SELECT D.*, P.*, B.date_bill
+                    FROM detail_bill AS D INNER JOIN products AS P ON D.id_product_bill = P.id_product
+                    INNER JOIN bill AS B ON D.id_bill = B.id_bill 
+                    WHERE B.id_customer_bill = '$id_customer_bill'";
+
+        return $db->query($select);
+    }
+
     function sumPriceBill($id_bill) {
         global $db;
 

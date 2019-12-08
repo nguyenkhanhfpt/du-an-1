@@ -87,6 +87,16 @@
         $db->exec($update);
     }
 
+    function updateCustomerSite($id_customer, $name_customer, $address, $img_customer) {
+        global $db;
+
+        $update = "UPDATE customers
+                    SET name_customer = '$name_customer', address = '$address', img_customer = '$img_customer'
+                    WHERE id_customer = '$id_customer'";
+        
+        $db->exec($update);
+    }
+
     function checkLogin($id_customer, $password, $saveAccount) {
         global $db;
 
@@ -128,5 +138,30 @@
         $delete = "DELETE FROM customers WHERE id_customer = '$id_customer'";
 
         $db->exec($delete);
+    }
+
+    function checkPassword($id_customer, $password) {
+        global $db;
+
+        $select = "SELECT * FROM customers WHERE id_customer = '$id_customer' AND password = '$password'";
+
+        $customers = $db->query($select);
+
+        $customer = $customers->fetch();
+
+        if(is_array($customer)){
+            return 'true';
+        }
+        else {
+            return 'false';
+        }
+    }
+
+    function changePassword($id_customer, $newPassword){
+        global $db;
+
+        $update = "UPDATE customers SET password = '$newPassword' WHERE id_customer = '$id_customer'";
+
+        $db->exec($update);
     }
 ?>
