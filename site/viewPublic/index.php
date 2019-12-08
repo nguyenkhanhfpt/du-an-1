@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require '../../global.php';
     require '../../DAO/functionUploadImg.php';
 

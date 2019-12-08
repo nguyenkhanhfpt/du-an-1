@@ -126,9 +126,13 @@
             <div class="row">
                 <?php foreach ($allImgUpload as $img) : ?>
                     <div class="col-4 col-md-2 mb-3 images-img">
-                        <img src="<?= $URL_IMG ?>/imgUpload/<?=$img['img_upload']?>" class="rounded shadow-sm" width="100%">
-                        <?php if ($img['id_customer'] == $_SESSION['id_customer']) : ?>
-                            <span class="badge badge-primary badge-pill bg-white text-dark border position-absolute" style="top:-5px; right: 10px;"><a href="index.php?deleteImgUpload&id_img=<?=$img['id_img']?>&id_product=<?= $viewProduct['id_product']?>" class="text-danger text-decoration-none">X</a></span>
+                        <div class="img img-bot">
+                            <a href="<?= $URL_IMG ?>/imgUpload/<?=$img['img_upload']?>"><img src="<?= $URL_IMG ?>/imgUpload/<?=$img['img_upload']?>" class="rounded shadow-sm" width="100%"></a>
+                        </div>
+                        <?php if(isset($_SESSION['id_customer'])): ?>
+                            <?php if ($img['id_customer'] == $_SESSION['id_customer']) : ?>
+                                <span class="badge badge-primary badge-pill bg-white text-dark border position-absolute" style="top:-5px; right: 10px;"><a href="index.php?deleteImgUpload&id_img=<?=$img['id_img']?>&id_product=<?= $viewProduct['id_product']?>" class="text-danger text-decoration-none">X</a></span>
+                            <?php endif ?>
                         <?php endif ?>
                     </div>
                 <?php endforeach ?>
