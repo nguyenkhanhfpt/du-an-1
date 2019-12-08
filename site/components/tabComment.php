@@ -41,23 +41,23 @@
                                     <h5 class="card-title text-center">Đánh giá</h5>
 
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="review1" value="5" name="review" class="custom-control-input">
+                                        <input type="radio" id="review1" value="5" name="review" class="custom-control-input" required>
                                         <label class="custom-control-label" for="review1">Tuyệt vời</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="review2" value="4" name="review" class="custom-control-input">
+                                        <input type="radio" id="review2" value="4" name="review" class="custom-control-input" required>
                                         <label class="custom-control-label" for="review2">Tốt</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="review3" value="3" name="review" class="custom-control-input">
+                                        <input type="radio" id="review3" value="3" name="review" class="custom-control-input" required>
                                         <label class="custom-control-label" for="review3">Khá tốt</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="review4" value="2" name="review" class="custom-control-input">
+                                        <input type="radio" id="review4" value="2" name="review" class="custom-control-input" required>
                                         <label class="custom-control-label" for="review4">Trung bình</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="review5" value="1" name="review" class="custom-control-input">
+                                        <input type="radio" id="review5" value="1" name="review" class="custom-control-input" required>
                                         <label class="custom-control-label" for="review5">Kém</label>
                                     </div>
                                 </div>
