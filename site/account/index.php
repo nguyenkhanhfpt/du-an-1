@@ -10,7 +10,7 @@
 
 
     if(array_key_exists('changeProfile', $_REQUEST)) {
-        $img_customer = strlen($_FILES['img_customer']['name']) > 0 ? save_file('img_customer', $DIR_IMG) : $oldImg;
+        $img_customer = strlen($_FILES['img_customer']['name']) > 0 ? save_file('img_customer', $DIR_IMG .'/imgCustomers') : $oldImg;
         updateCustomerSite($_SESSION['id_customer'], $name_customer, $address, $img_customer);
         header("Location: ./");
     }

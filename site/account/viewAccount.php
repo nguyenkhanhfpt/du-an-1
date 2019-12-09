@@ -5,7 +5,7 @@
                 <img src="<?= $URL_IMG ?>/imgCustomers/<?= $customer['img_customer'] ?>" class="rounded-circle" width="65px" height="65px">
                 <div class="ml-2">
                     <p class="mb-1">Thông tin tài khoản</p>
-                    <h6 style="font-size: 18px" class="font-weight-bold"><?= $_SESSION['name_customer'] ?></h6>
+                    <h6 style="font-size: 18px" class="font-weight-bold"><?= $customer['name_customer'] ?></h6>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Họ tên </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="name_customer" id="name" value="<?= $_SESSION['name_customer'] ?>">
+                                    <input type="text" class="form-control" name="name_customer" id="name" value="<?= $customer['name_customer'] ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
