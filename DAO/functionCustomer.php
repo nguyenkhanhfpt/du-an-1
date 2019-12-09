@@ -83,7 +83,6 @@
                     SET name_customer = '$name_customer', address = '$address', role = $role, img_customer = '$img_customer'
                     WHERE id_customer = '$id_customer'";
         
-
         $db->exec($update);
     }
 
@@ -165,5 +164,22 @@
         $update = "UPDATE customers SET password = '$newPassword' WHERE id_customer = '$id_customer'";
 
         $db->exec($update);
+    }
+
+    function forgetPassword($id_customer, $email) {
+        global $db;
+
+        $select = "SELECT * FROM customers WHERE id_customer = '$id_customer' AND email = '$email'";
+
+        $customers = $db->query($select);
+
+        $customer = $customers->fetch();
+
+        if(is_array($customer)){
+            return 'true';
+        }
+        else {
+            return 'false';
+        }
     }
 ?>

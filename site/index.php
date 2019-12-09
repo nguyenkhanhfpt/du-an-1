@@ -46,6 +46,29 @@
         $err = "Đăng nhập thất bại!";
     }
 
+    else if(array_key_exists('forgotPassword', $_REQUEST)) {
+        $view_name = 'components/forgotPassword.php';
+    }
+
+    else if(array_key_exists('confirmAccount', $_REQUEST)) {
+        $check = forgetPassword($id_customer, $email);
+        if($check == 'true') {
+            $_SESSION['id_customer_forPass'] = $id_customer; // tạo session chứa id customer
+            $view_name = 'components/formChangePassword.php';
+        }
+        else {
+            $view_name = 'components/forgotPassword.php';
+            $err = 'Xác nhận tài khoản không chính xác';
+        }
+    }
+
+    else if(array_key_exists('confirmPassword', $_REQUEST)) {
+        changePassword($_SESSION['id_customer_forPass'], $newPassword);
+
+        $message = 'Thay đổi mật khẩu thành công!';
+        $view_name = 'components/formChangePassword.php';
+    }
+
     else if(array_key_exists('submitComment', $_REQUEST)) {
         if(!isset($_SESSION['id_customer'])) {
             header('Location: index.php?viewProduct&err=Phải đăng nhập để bình luận!&id_product=' .$id_product);

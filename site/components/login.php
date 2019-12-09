@@ -25,7 +25,7 @@
         <div class="form-group form-check custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="saveAccount" id="save-info">
             <label class="custom-control-label" for="save-info">Lưu mật khẩu</label>
-            <span class="small d-block float-md-right">Quên mật khẩu? Nhấn vào <a href="">đây</a></span>
+            <span class="small d-block float-md-right">Quên mật khẩu? Nhấn vào <a href="<?=$URL_SITE?>/?forgotPassword">đây</a></span>
         </div>
         
         <button type="submit" name="login" class="btn btn-success">Đăng nhập</button>
