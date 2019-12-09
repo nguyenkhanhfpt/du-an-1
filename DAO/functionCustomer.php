@@ -93,6 +93,8 @@
         $update = "UPDATE customers
                     SET name_customer = '$name_customer', address = '$address', img_customer = '$img_customer'
                     WHERE id_customer = '$id_customer'";
+            
+        $_SESSION['name_customer'] = $name_customer;
         
         $db->exec($update);
     }

@@ -6,7 +6,7 @@
         <div class="col-3 mb-3">
             <div class="p-3 shadow bg-white">
                 <div class="d-flex">
-                    <img src="<?= $URL_IMG ?>/imgCustomers/<?=$bill['img_customer']?>" class="rounded-circle" width="45px">
+                    <img src="<?= $URL_IMG ?>/imgCustomers/<?=$bill['img_customer']?>" class="rounded-circle" width="50px" height="50px">
                     <div class="ml-2">
                         <p class="font-weight-bold mb-0"><?=$bill['name_customer']?></p>
                         <span class="small text-secondary"><?=$bill['date_bill']?></span>
