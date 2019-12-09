@@ -15,7 +15,11 @@
     <div class="tab-content" id="pills-tabContent">
         <!-- Phần mô tả -->
         <div class="tab-pane text-justify fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            Không có mô tả nào
+            <?php if(strlen($viewProduct['description']) > 0): ?>
+                <?=$viewProduct['description']?>
+            <?php else: ?>
+                <p>Không có mô tả</p>
+            <?php endif ?>
         </div>
 
         <!-- Phần bình luận -->
