@@ -43,7 +43,7 @@
                     <div class="pt-1">
                         <a class="nav-link dropdown-toggle p-0 pb-2" style="color: #36a82b" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="<?=$URL_IMG?>/account.svg" width="23px">
+                            <img src="<?=$URL_IMG?>/imgCustomers/<?=$_SESSION['img_customer'];?>" class="rounded-circle" width="35px" height="35px">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 160px ;">
                             <div class="name-over text-center pb-2 font-weight-bold">

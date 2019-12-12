@@ -36,6 +36,16 @@
         return $member['role'];
     }
 
+    function getImg($id_customer) {
+        global $db;
+
+        $select = "SELECT img_customer FROM customers WHERE id_customer = '$id_customer'";
+
+        $members = $db->query($select);
+        $member = $members->fetch();
+        return $member['img_customer'];
+    }
+
     function getName($id_customer) {
         global $db;
 
@@ -57,6 +67,7 @@
         $_SESSION['id_customer'] = $id_customer;
         $_SESSION['name_customer'] = getName($id_customer);
         $_SESSION['role'] = $role;
+        $_SESSION['img_customer'] = $img_customer;
 
         if(isset($saveAccount)){
             setcookie('id_customer', $id_customer, time() + 3600 * 24, "/");
@@ -94,6 +105,7 @@
                     WHERE id_customer = '$id_customer'";
             
         $_SESSION['name_customer'] = $name_customer;
+        $_SESSION['img_customer'] = $img_customer;
         
         $db->exec($update);
     }
@@ -110,6 +122,8 @@
             $_SESSION['id_customer'] = $id_customer;
             $_SESSION['name_customer'] = getName($id_customer);
             $_SESSION['role'] = getRole($id_customer);
+            $_SESSION['img_customer'] = getImg($id_customer);
+
 
             if(isset($saveAccount)){
                 setcookie('id_customer', $id_customer, time() + 3600 * 24, "/");
@@ -120,7 +134,12 @@
             header("Location: ../?falseLogin");
         }
         else{
-            header("Location: ../?successLogin");
+            if($_SESSION['role'] > 0) {
+                header('Location: ../../admin');
+            }
+            else{
+                header("Location: ../?successLogin");
+            }
         }
     }
 

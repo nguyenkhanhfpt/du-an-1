@@ -1,3 +1,10 @@
+<?php
+    function mysubstr($str,$limit=300){
+        if(strlen($str)<=$limit) return $str;
+        return mb_substr($str,0,$limit - 3,'UTF-8').'...';
+    }
+?>
+
 <div class="container">
     <div class="row mt-5">
         <div class="col-12 col-md-5 ">
@@ -57,9 +64,12 @@
                 <h3 class="font-weight-bold mt-1" style="color: #36A82B"><?= number_format($viewProduct['price_product']) ?> đ</h3>
             <?php endif ?>
             <hr>
-            <p class="text-justify my-4">Aenean id ullamcorper libero. Vestibulum imperdiet nibh.
-                Lorem ullamcorper volutpat. Vestibulum lacinia risus. Etiam sagittis ullamcorper volutpat.
-                Vestibulum lacinia risus sed ligula malesuada volutpat
+            <p class="text-justify my-4">
+                <?php if(strlen($viewProduct['description']) > 0) : ?>
+                    <?= mysubstr($viewProduct['description'], 200); ?>
+                <?php else : ?>
+                    <p>Không có mô tả</p>
+                <?php endif ?>
             </p>
             <span>Số lượng: </span>
             <form action="./cart/" method="post">
