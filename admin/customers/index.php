@@ -1,6 +1,7 @@
 <?php
     session_start();
     require '../../global.php'; // file global đã được require function của customers
+    require '../../DAO/functionBuyProduct.php';
 
     $message = '';
 
@@ -24,6 +25,12 @@
     else if(array_key_exists('viewEditCustomer', $_REQUEST)) {
         $customer = selectCustomerId($id_customer);
         $view_name = 'viewEditCustomer.php';
+    }
+
+    else if(array_key_exists('viewDetailCustomer', $_REQUEST)) {
+        $customer = selectCustomerId($id_customer);
+        $products = selectProductsBuyByCustomer($id_customer);
+        $view_name = 'viewDetailCustomer.php';
     }
 
     else if(array_key_exists('editCustomer', $_REQUEST)) {
