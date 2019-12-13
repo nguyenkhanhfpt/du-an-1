@@ -12,14 +12,14 @@
             <div class="form-group">
                 <label for="name_product">Tên sản phẩm</label>
                 <input type="text" class="form-control" id="name_product" name="name_product"
-                    placeholder="Enter product">
+                    placeholder="Enter product" required>
             </div>
             <div class="form-group">
                 <div class="row">
                     <div class="col">
                         <label for="price_product">Giá sản phẩm</label>
                         <input type="text" class="form-control" id="price_product" name="price_product"
-                            placeholder="Enter price">
+                            placeholder="Enter price" required>
                     </div>
                     <div class="col">
                         <label for="sale">Giảm giá</label>
@@ -38,6 +38,7 @@
                     <div class="col">
                         <label for="kind_product">Loại sản phẩm</label>
                         <select class="form-control" id="kind_product" name="kind_product">
+                            <option>---</option>
                             <?php foreach($kindProducts as $kind) : ?>
                                 <option value="<?=$kind['id_kind']?>"><?=$kind['name_kind']?></option>
                             <?php endforeach ?>
@@ -45,7 +46,7 @@
                     </div>
                     <div class="col">
                         <label for="exampleFormControlFile1">Thêm ảnh</label>
-                        <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                        <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1" required>
                     </div>
                 </div>
             </div>

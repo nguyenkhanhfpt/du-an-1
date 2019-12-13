@@ -12,7 +12,7 @@
     <form action="index.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Tên loại hàng</label>
-            <input type="text" class="form-control" placeholder="Nhập loại" name="name_kind" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" class="form-control" placeholder="Nhập loại" name="name_kind" id="exampleInputEmail1" aria-describedby="emailHelp" required>
         </div>
 
         <button type="submit" name="addKind" class="btn btn-success">Thêm mới</button>

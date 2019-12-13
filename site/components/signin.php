@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label>Số điện thoại</label>
-            <input type="tel" class="form-control" placeholder="Phone number" name="phone" pattern="[0-9]{10,11}">
+            <input type="tel" class="form-control" placeholder="Phone number" name="phone" pattern="[0-9]{10,11}" required>
         </div>
         <div class="form-group">
             <label>Email</label>

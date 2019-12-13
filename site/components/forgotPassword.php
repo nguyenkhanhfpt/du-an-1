@@ -10,11 +10,11 @@
 
         <div class="form-group">
             <label>Tài khoản</label>
-            <input type="text" class="form-control" placeholder="Enter your account" name="id_customer">
+            <input type="text" class="form-control" placeholder="Enter your account" name="id_customer" required>
         </div>
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
         </div>
         <button type="submit" name="confirmAccount" class="btn btn-success">Xác nhận</button>
     </form>

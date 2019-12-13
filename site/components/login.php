@@ -16,11 +16,11 @@
 
         <div class="form-group">
             <label>Tài khoản</label>
-            <input type="text" class="form-control" placeholder="Enter your account" name="id_customer" >
+            <input type="text" class="form-control" placeholder="Enter your account" name="id_customer" required>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Mật khẩu</label>
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" placeholder="Password" name="password" pattern=".{6,}" required>
         </div>
         <div class="form-group form-check custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="saveAccount" id="save-info">

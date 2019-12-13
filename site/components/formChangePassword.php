@@ -9,11 +9,11 @@
 
         <div class="form-group">
             <label>Mật khẩu mới</label>
-            <input type="password" id="pass1" class="form-control" placeholder="Enter new password" name="newPassword">
+            <input type="password" id="pass1" class="form-control" placeholder="Enter new password" name="newPassword" pattern=".{6,}" required>
         </div>
         <div class="form-group">
             <label>Xác nhận mật khẩu</label>
-            <input type="password" id="pass2" class="form-control" placeholder="Password again">
+            <input type="password" id="pass2" class="form-control" placeholder="Password again" required >
         </div>
         <button type="submit" name="confirmPassword" class="btn btn-success">Xác nhận</button>
     </form>
